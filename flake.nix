@@ -41,8 +41,24 @@
           "myjellyfin"
         ];
       };
-
+      
       oxygen = {
+        system = "x86_64-linux";
+        home-manager = "workstation";
+        users = [ "user" ];
+        profiles = [ "workstation" ];
+        modules = [ "nvidia" ];
+      };
+
+      uranium = {
+        system = "x86_64-linux";
+        home-manager = "workstation";
+        users = [ "user" ];
+        profiles = [ "workstation" ];
+        modules = [ "intel" ];
+      };
+
+      plutonium = {
         system = "x86_64-linux";
         home-manager = "workstation";
         users = [ "user" ];
