@@ -9,6 +9,7 @@
   };
   outputs = { self, ... }@inputs:
   let
+    pkgs = inputs.nixpkgs.legacyPackages."x86_64-linux"; 
     build-host = name: value: inputs.nixpkgs.lib.nixosSystem {
       system = value.system;
       modules = [
@@ -29,6 +30,16 @@
     };
 
     hosts = {
+      hydrogen = {
+        system = "x86_64-linux";
+        users = [ "user" ];
+        profiles = [ "server" ];
+        modules = [
+          "nvidia"
+          "nextcloud"
+          "usenet"
+        ];
+
 
       oxygen = {
         system = "x86_64-linux";
@@ -52,8 +63,11 @@
         modules = [
           "ddclient"
         ];
+      };
     };
   in {
     nixosConfigurations = builtins.mapAttrs build-host hosts;
+
+    devShell = import ./shell.nix { inherit pkgs; };
   };
 }
