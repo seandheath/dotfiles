@@ -61,6 +61,9 @@
     enable = true;
     userName = "Sean Heath";
     userEmail = "se@nheath.com";
+    extraConfig = {
+      pull.rebase = false;
+    };
   };
 
   dconf.settings = {
