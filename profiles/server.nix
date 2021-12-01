@@ -46,11 +46,6 @@
     "net.ipv4.tcp_mtu_probing" = 1;
   };
 
-  # Enable SSH for user
-  users.users.user = {
-    openssh.authorizedKeys.keyFiles = [ "/home/user/.ssh/server.pub" ];
-  };
-
   environment.systemPackages = with pkgs; [
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     btrfs-progs

@@ -38,8 +38,9 @@
           "nvidia"
           "nextcloud"
           "usenet"
+          "myjellyfin"
         ];
-
+      };
 
       oxygen = {
         system = "x86_64-linux";
