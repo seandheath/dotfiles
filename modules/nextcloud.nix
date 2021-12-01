@@ -6,33 +6,43 @@ let
     postgres = 71;
   };
 in {
+  sops.secrets.nextcloud-adminpass = {
+    owner = config.users.users.nccnextcloud.name;
+    group = config.users.groups.nccnextcloud.name;
+    mode = "0400";
+  };
+  sops.secrets.nextcloud-dbpass = {
+    owner = config.users.users.nccnextcloud.name;
+    group = config.users.groups.nccnextcloud.name;
+    mode = "0400";
+  };
   users.groups.nccnextcloud.gid = id.nextcloud;
-  users.groups.nccacme.gid = id.acme;
-  users.groups.nccpostgres.gid = id.postgres;
+  #users.groups.nccacme.gid = id.acme;
+  #users.groups.nccpostgres.gid = id.postgres;
   users.users.nccnextcloud = {
     isSystemUser = true;
     uid = id.nextcloud;
-    group = "nccnextcloud";
+    group = config.users.users.nccnextcloud.name;
   };
   users.users.nccacme = {
     isSystemUser = true;
     uid = id.acme;
-    group = "nccacme";
+    group = config.users.groups.nccnextcloud.name;
   };
   users.users.nccpostgres = {
     isSystemUser = true;
     uid = id.postgres;
-    group = "nccpostgres";
+    group = config.users.groups.nccnextcloud.name;
   };
   system.activationScripts.nextcloud.text = ''
-    mkdir -p /var/lib/nextcloudcontainer
+    mkdir -p /var/lib/ncc
   '';
   containers.nextcloud = {
     ephemeral = true;
     autoStart = true;
     bindMounts = {
       "/var/lib/" = {
-        hostPath = "/var/lib/nextcloudcontainer/";
+        hostPath = "/var/lib/ncc/";
         isReadOnly = false;
       };
     };
@@ -48,12 +58,12 @@ in {
       users.users.acme = {
         isSystemUser = true;
         uid = id.acme;
-        group = "acme";
+        group = "nextcloud";
       };
       users.users.postgres = {
         isSystemUser = true;
         uid = id.postgres;
-        group = "postgres";
+        group = "nextcloud";
       };
       networking.firewall.enable = true;
       networking.firewall.allowedTCPPorts = [ 80 443 ];
@@ -67,9 +77,9 @@ in {
         package = pkgs.nextcloud22;
         config = {
           adminuser = "sean";
-          adminpassFile = "/var/lib/config/nextcloud.adminpass";
+          adminpassFile = config.sops.secrets.nextcloud-adminpass.path;
           dbuser = "nextcloud";
-          dbpassFile = "/var/lib/config/nextcloud.dbpass";
+          dbpassFile = config.sops.secrets.nextcloud-dbpass.path;
           dbtype = "pgsql";
           dbname = "nextcloud";
           dbhost = "/run/postgresql";
