@@ -9,36 +9,51 @@
   };
   outputs = { self, ... }@inputs:
   let
-    defaultModules = [
-      ./profiles/core.nix
-      inputs.sops-nix.nixosModules.sops
-      inputs.home-manager.nixosModules.home-manager {
+    build-host = name: value: inputs.nixpkgs.lib.nixosSystem {
+      system = value.system;
+      modules = [
+        ./hosts/${name}
+        ./profiles/core.nix
+        inputs.sops-nix.nixosModules.sops
+        inputs.home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          #home-manager.users.user.home.homeDirectory = "/home/user";
           home-manager.users.user = import ./users/user/home.nix;
-      }
-    ];
-    build-host = name: value: inputs.nixpkgs.lib.nixosSystem {
-        system = value.system;
-        modules = [
-          ./hosts/${name}
-        ] ++ value.users ++ value.modules ++ defaultModules;
-        specialArgs = {inherit inputs;};
+        }
+      ]
+      ++ (map (u: ./users/${u}) value.users)
+      ++ (map (p: ./profiles/${p}.nix) value.profiles)
+      ++ (map (m: ./modules/${m}.nix) value.modules);
+      specialArgs = {inherit inputs;};
     };
+
     hosts = {
+
       oxygen = {
         system = "x86_64-linux";
         users = [
-          ./users/user
+          "user"
+        ];
+        profiles = [
+          "workstation"
         ];
         modules = [
-          ./profiles/workstation.nix
-          ./modules/nvidia.nix
+          "nvidia"
         ];
       };
+
+      router = {
+        system = "x86_64-linux";
+        users = [
+          "user"
+        ];
+        profiles = [ ];
+        modules = [
+          "ddclient"
+        ];
     };
   in {
     nixosConfigurations = builtins.mapAttrs build-host hosts;
-    devShell = import ./shell.nix { inherit inputs; };
   };
 }

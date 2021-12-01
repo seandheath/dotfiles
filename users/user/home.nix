@@ -1,11 +1,11 @@
 { config, pkgs, ... }: {
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  #programs.home-manager.enable = true;
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "user";
-  home.homeDirectory = "/home/user";
+  #home.homeDirectory = "/home/user";
 
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [

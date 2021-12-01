@@ -1,4 +1,7 @@
 { config, pkgs, ... }: {
+  imports = [
+    ../modules/sops.nix
+  ];
   nix = {
     package = pkgs.nixFlakes;
     extraOptions = ''
