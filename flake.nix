@@ -19,7 +19,7 @@
         inputs.home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.user = import ./users/user/home.nix
+          home-manager.users.user = import ./home-profiles/${value.home-manager}.nix
         }
       ]
       ++ (map (u: ./users/${u}) value.users)
@@ -33,7 +33,7 @@
         system = "x86_64-linux";
         users = [ "user" ];
         profiles = [ "server" ];
-        home-manager = false;
+        home-manager = "server";
         modules = [
           "nvidia"
           "nextcloud"
@@ -44,28 +44,18 @@
 
       oxygen = {
         system = "x86_64-linux";
-        home-manager = true;
-        users = [
-          "user"
-        ];
-        profiles = [
-          "workstation"
-        ];
-        modules = [
-          "nvidia"
-        ];
+        home-manager = "workstation";
+        users = [ "user" ];
+        profiles = [ "workstation" ];
+        modules = [ "nvidia" ];
       };
 
       router = {
         system = "x86_64-linux";
-        home-manager = false;
-        users = [
-          "user"
-        ];
+        home-manager = "server";
+        users = [ "user" ];
         profiles = [ ];
-        modules = [
-          "ddclient"
-        ];
+        modules = [ "ddclient" ];
       };
     };
   in {
