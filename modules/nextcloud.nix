@@ -5,6 +5,8 @@ let
     acme = 2002;
     postgres = 71;
   };
+  adminpass = config.sops.secrets.nextcloud-adminpass.path;
+  dbpass = config.sops.secrets.nextcloud-dbpass.path;
 in {
   sops.secrets.nextcloud-adminpass = {
     owner = config.users.users.nccnextcloud.name;
@@ -17,22 +19,22 @@ in {
     mode = "0400";
   };
   users.groups.nccnextcloud.gid = id.nextcloud;
-  #users.groups.nccacme.gid = id.acme;
-  #users.groups.nccpostgres.gid = id.postgres;
+  users.groups.nccacme.gid = id.acme;
+  users.groups.nccpostgres.gid = id.postgres;
   users.users.nccnextcloud = {
     isSystemUser = true;
     uid = id.nextcloud;
-    group = config.users.users.nccnextcloud.name;
+    group = config.users.groups.nccnextcloud.name;
   };
   users.users.nccacme = {
     isSystemUser = true;
     uid = id.acme;
-    group = config.users.groups.nccnextcloud.name;
+    group = config.users.groups.nccacme.name;
   };
   users.users.nccpostgres = {
     isSystemUser = true;
     uid = id.postgres;
-    group = config.users.groups.nccnextcloud.name;
+    group = config.users.groups.nccpostgres.name;
   };
   system.activationScripts.nextcloud.text = ''
     mkdir -p /var/lib/ncc
@@ -41,12 +43,16 @@ in {
     ephemeral = true;
     autoStart = true;
     bindMounts = {
+      "/run/secrets" = {
+        hostPath = "/run/secrets";
+        isReadOnly = true;
+      };
       "/var/lib/" = {
         hostPath = "/var/lib/ncc/";
         isReadOnly = false;
       };
     };
-    config = { config, pkgs, ... }: {
+    config = { config, pkgs, sops, ... }: {
       users.groups.nextcloud.gid = id.nextcloud;
       users.groups.acme.gid = id.acme;
       users.groups.postgres.gid = id.postgres;
@@ -58,12 +64,12 @@ in {
       users.users.acme = {
         isSystemUser = true;
         uid = id.acme;
-        group = "nextcloud";
+        group = "acme";
       };
       users.users.postgres = {
         isSystemUser = true;
         uid = id.postgres;
-        group = "nextcloud";
+        group = "postgres";
       };
       networking.firewall.enable = true;
       networking.firewall.allowedTCPPorts = [ 80 443 ];
@@ -77,9 +83,9 @@ in {
         package = pkgs.nextcloud22;
         config = {
           adminuser = "sean";
-          adminpassFile = config.sops.secrets.nextcloud-adminpass.path;
+          adminpassFile = adminpass;
           dbuser = "nextcloud";
-          dbpassFile = config.sops.secrets.nextcloud-dbpass.path;
+          dbpassFile = dbpass;
           dbtype = "pgsql";
           dbname = "nextcloud";
           dbhost = "/run/postgresql";
