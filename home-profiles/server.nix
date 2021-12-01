@@ -164,7 +164,7 @@
   };
 
   programs.direnv.enable = true;
-  programs.direnv.nix-direnv = true;
+  programs.direnv.nix-direnv.enable = true;
 
 
   # This value determines the Home Manager release that your
