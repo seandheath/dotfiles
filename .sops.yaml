@@ -1,0 +1,17 @@
+keys:
+  - &user age1276ku650f9gsmv3slnduus8styr0m6ued8dpza2qau446sp9l4qsq5dden
+  - &hydrogen age1w2pe44zd2ttzgerdktvreent59mpw428jfahq8plevsq86tdp9hqy9dqg9
+  - &oxygen age1qng3af5sk50e8mkr490frv2htaxtrxw973r8wu785j6l5c89fslsz7ekur
+  - &uranium age1w59spwe0amzp667tjlqv2s0ug9rmdkpc422fx7sw8r2kkwld6uusc0umuy
+  - &plutonium age1r8t8pvll9gdh6llhxjdzs6fgstd83mteyyuullz5l9qwv0ag2sqslmdzn2
+  - &router age1cmg7jft0g8lh6f4p56j5syvdf3mht8m86wakk03eqx667ac6v50qvudy34
+creation_rules:
+  - path_regex: secrets/[^/]+\.yaml$
+    key_groups:
+      - age:
+        - *user
+        - *hydrogen
+        - *oxygen
+        - *uranium
+        - *plutonium
+        - *router
