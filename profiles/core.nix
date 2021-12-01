@@ -26,12 +26,6 @@
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Set up user
-  users.users.user = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "scanner" "lp" ];
-  };
-
   # Set CPU Governor
   powerManagement.cpuFreqGovernor = "performance";
 

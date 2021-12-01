@@ -9,6 +9,8 @@
 
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
+    ungoogled-chromium
+    firefox
     joplin-desktop
     discord
     qucs
@@ -19,7 +21,7 @@
     inetutils
     nixfmt
     tmux
-    #tintin
+    tintin
     jellyfin-media-player
     inconsolata
     flameshot
@@ -33,7 +35,6 @@
     python310
     pcsctools
     opensc
-    google-chrome
     gcc
     xournalpp
     htop
@@ -135,8 +136,10 @@
 
             export XZ_DEFAULTS='-T0 -9'
             export EDITOR=nvim
-            alias nixedit="sudo -E nvim /etc/nixos/configuration.nix"
-            alias tintin=tt++
+            alias nr="sudo nixos-rebuild switch --flake /etc/nixos"
+            alias ns="nix search nixpkgs"
+            alias he="nvim /etc/nixos/users/$USER/home.nix && git -C /etc/nixos add ."
+              
             direnvinit() {
               if [ ! -e ./.envrc ]; then
                 echo "use nix" > .envrc
