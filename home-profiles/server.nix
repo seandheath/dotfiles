@@ -9,6 +9,7 @@
 
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
+    dhcp
     nixfmt
     git
     fzf
