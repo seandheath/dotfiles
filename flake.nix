@@ -22,61 +22,68 @@
           home-manager.users.user = import ./home-profiles/${value.home-manager}.nix;
         }
       ]
-      ++ (map (u: ./users/${u}) value.users)
-      ++ (map (p: ./profiles/${p}.nix) value.profiles)
-      ++ (map (m: ./modules/${m}.nix) value.modules);
+      ++ value.modules;
       specialArgs = {inherit inputs;};
     };
 
     hosts = {
       hydrogen = {
         system = "x86_64-linux";
-        users = [ "user" ];
-        profiles = [ "server" ];
         home-manager = "server";
         modules = [
-          "nvidia"
-          "nextcloud"
-          "usenet"
-          "myjellyfin"
+          ./users/user
+          ./profiles/server.nix
+          ./modules/nvidia.nix
+          ./modules/nextcloud.nix
+          ./modules/usenet.nix
+          ./modules/myjellyfin.nix
+          inputs.nixos-hardware.nixosModules.common-cpu-intel
         ];
       };
       
       oxygen = {
         system = "x86_64-linux";
         home-manager = "workstation";
-        users = [ "user" ];
-        profiles = [ "workstation" ];
-        modules = [ "nvidia" ];
+        modules = [
+          ./users/user
+          ./profiles/workstation.nix
+          ./modules/nvidia.nix
+          inputs.nixos-hardware.nixosModules.common-cpu-amd
+        ];
       };
 
       uranium = {
         system = "x86_64-linux";
         home-manager = "workstation";
-        users = [ "user" ];
-        profiles = [ "workstation" ];
-        modules = [ "intel" ];
+        modules = [
+          ./users/user
+          ./profiles/workstation.nix
+          inputs.nixos-hardware.nixosModules.dell-xps-13-9310
+        ];
       };
 
       plutonium = {
         system = "x86_64-linux";
         home-manager = "workstation";
-        users = [ "user" ];
-        profiles = [ "workstation" ];
-        modules = [ "nvidia" ];
+        modules = [
+          ./users/user
+          ./profiles/workstation
+          inputs.nixos-hardware.nixosModules.common-cpu-intel
+        ];
       };
 
       router = {
         system = "x86_64-linux";
         home-manager = "server";
-        users = [ "user" ];
-        profiles = [ ];
-        modules = [ "ddclient" ];
+        modules = [
+          ./users/user
+          ./modules/ddlient.nix
+          inputs.nixos-hardware.nixosModules.common-cpu-amd
+        ];
       };
     };
   in {
     nixosConfigurations = builtins.mapAttrs build-host hosts;
-
     devShell = import ./shell.nix { inherit pkgs; };
   };
 }
