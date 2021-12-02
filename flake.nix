@@ -19,7 +19,7 @@
         inputs.home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.user = import ./home-profiles/${value.home-manager}.nix;
+          home-manager.users.user = import ./home-modules/${value.home-manager}.nix;
         }
       ]
       ++ (map (u: ./users/${u}) value.users)
