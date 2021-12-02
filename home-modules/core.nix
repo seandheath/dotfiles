@@ -4,7 +4,6 @@
     ./git.nix
     ./neovim.nix
     ./bash.nix
-    ./direnv.nix
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -14,13 +13,10 @@
 
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
-    dhcp
     nixfmt
     git
-    fzf
     file
     htop
-    xclip
   ];
 
   # This value determines the Home Manager release that your

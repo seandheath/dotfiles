@@ -1,4 +1,15 @@
 { config, pkgs, ... }: {
+  imports = [
+    ./direnv.nix
+  ];
+
+  home.packages = with pkgs; [
+    fzf
+    bat
+  ];
+
+  home.file.".fzfcompletion".source = ./assets/fzfcompletion.sh;
+
   # BASH
   programs.bash = {
     enable = true;
@@ -30,11 +41,25 @@ EOF
   fi
 }
 
-# Set up FZF
+# FZF
 if command -v fzf-share >/dev/null; then
   source "$(fzf-share)/key-bindings.bash"
   source "$(fzf-share)/completion.bash"
 fi
+bind -x '"\t": fzf_bash_completion'
+export FZF_DEFAULT_OPTS='--border --info=default --bind=tab:down,btab:up,space:accept'
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd) fzf "$@" --preview 'tree -C {} | head -200' ;;
+    cat) fzf "$@" --preview 'bat --style=numbers --color=always --line-range :500 {}' ;; 
+    nvim) fzf "$@" --preview 'bat --style=numbers --color=always --line-range :500 {}' ;; 
+    *) fzf "$@" ;;
+  esac
+}
+source ${config.home.file.".fzfcompletion".target}
 
 # Prompt
 BLACK='\e[0;30m'        # Black
