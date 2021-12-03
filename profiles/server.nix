@@ -60,6 +60,9 @@
   # Enable SSH
   services.openssh.enable = true;
 
+  # Enable watchdog
+  services.das_watchdog.enable = true;
+
   # Disable suspend
   systemd.targets.sleep.enable = false;
   systemd.targets.suspend.enable = false;

@@ -20,7 +20,6 @@ export XZ_DEFAULTS='-T0 -9'
 export EDITOR=nvim
 alias nr="sudo nixos-rebuild switch --flake /etc/nixos"
 alias ns="nix search nixpkgs"
-alias he="nvim /etc/nixos/users/$USER/home.nix && git -C /etc/nixos add ."
 
 function direnvinit {
   if [ ! -e ./.envrc ]; then
