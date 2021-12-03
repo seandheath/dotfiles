@@ -3,6 +3,7 @@
   imports = [
     ./core.nix
     ./go.nix
+    ./gnome.nix
   ];
 
   home.packages = with pkgs; [

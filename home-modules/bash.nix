@@ -8,8 +8,6 @@
     bat
   ];
 
-  home.file.".fzfcompletion".source = ./assets/fzfcompletion.sh;
-
   # BASH
   programs.bash = {
     enable = true;
@@ -46,8 +44,7 @@ if command -v fzf-share >/dev/null; then
   source "$(fzf-share)/key-bindings.bash"
   source "$(fzf-share)/completion.bash"
 fi
-bind -x '"\t": fzf_bash_completion'
-export FZF_DEFAULT_OPTS='--border --info=default --bind=tab:down,btab:up,space:accept'
+export FZF_DEFAULT_OPTS='--border --info=default'
 _fzf_comprun() {
   local command=$1
   shift
@@ -59,7 +56,6 @@ _fzf_comprun() {
     *) fzf "$@" ;;
   esac
 }
-source ${config.home.file.".fzfcompletion".target}
 
 # Prompt
 BLACK='\e[0;30m'        # Black
