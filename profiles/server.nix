@@ -1,5 +1,8 @@
 { config, pkgs, ... }: {
 
+  # Enable memtest86
+  boot.loader.systemd-boot.memtest86.enable = true;
+
   # Set up network stuff
   boot.kernel.sysctl = {
     # Enable automatic reboot after kernel panic after 60s
