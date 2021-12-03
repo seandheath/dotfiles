@@ -22,7 +22,6 @@ export XZ_DEFAULTS='-T0 -9'
 export EDITOR=nvim
 alias nr="sudo nixos-rebuild switch --flake /etc/nixos"
 alias ns="nix search nixpkgs"
-alias he="nvim /etc/nixos/users/$USER/home.nix && git -C /etc/nixos add ."
 
 function direnvinit {
   if [ ! -e ./.envrc ]; then
@@ -46,8 +45,7 @@ if command -v fzf-share >/dev/null; then
   source "$(fzf-share)/key-bindings.bash"
   source "$(fzf-share)/completion.bash"
 fi
-bind -x '"\t": fzf_bash_completion'
-export FZF_DEFAULT_OPTS='--border --info=default --bind=tab:down,btab:up,space:accept'
+export FZF_DEFAULT_OPTS='--border --info=default'
 _fzf_comprun() {
   local command=$1
   shift
@@ -59,7 +57,6 @@ _fzf_comprun() {
     *) fzf "$@" ;;
   esac
 }
-source ${config.home.file.".fzfcompletion".target}
 
 # Prompt
 BLACK='\e[0;30m'        # Black

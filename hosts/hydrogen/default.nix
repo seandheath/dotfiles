@@ -5,6 +5,9 @@
 
   hardware.cpu.amd.updateMicrocode = true;
 
+  # Keep GPU alive even though we're headless
+  hardware.nvidia.nvidiaPersistenced = true;
+
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.

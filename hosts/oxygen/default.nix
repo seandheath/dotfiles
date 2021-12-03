@@ -3,10 +3,10 @@
     ./hardware-configuration.nix
   ];
 
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
-  networking.useDHCP = false;
+  services.xserver.displayManager.gdm.nvidiaWayland = true;
+
+  boot.kernelModules = [ "kvm-amd" ];
+
   networking.interfaces.enp4s0.useDHCP = false;
   networking.interfaces.enp4s0.mtu = 9000;
   networking.interfaces.enp6s0.useDHCP = false;

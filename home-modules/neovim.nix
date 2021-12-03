@@ -1,5 +1,9 @@
 { config, pkgs, ... }: {
   # VIM
+  home.packages = with pkgs; [
+    pandoc
+    texlive.combined.scheme-small
+  ];
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -11,10 +15,14 @@
       nerdtree
       rainbow_parentheses
       rust-vim
+      deoplete-nvim
       deoplete-go
       deoplete-rust
       zig-vim
       SudoEdit-vim
+      vim-pandoc
+      vim-pandoc-syntax
+      markdown-preview-nvim
     ];
     extraConfig = ''
 filetype plugin indent on
@@ -26,6 +34,12 @@ set noexpandtab
 set clipboard+=unnamedplus
 
 let mapleader = ","
+
+" PANDOC
+nnoremap <leader>v :MarkdownPreview<CR>
+nnoremap <leader>pd :Pandoc docx<CR>
+nnoremap <leader>pp :Pandoc pdf<CR>
+let g:pandoc#syntax#conceal#urls = 1
 
 " NERDTREE
 nnoremap <leader>n :NERDTreeFocus<CR>

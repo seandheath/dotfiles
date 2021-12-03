@@ -17,6 +17,7 @@
     git
     file
     htop
+    inconsolata
   ];
 
   # This value determines the Home Manager release that your

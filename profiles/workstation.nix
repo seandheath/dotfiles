@@ -10,6 +10,8 @@
   services.printing.drivers = [ pkgs.brlaser ];
 
   # Set up virtualization
+  environment.systemPackages = with pkgs; [ virt-manager ];
+  programs.dconf.enable = true;
   virtualisation = {
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
