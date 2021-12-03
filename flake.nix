@@ -36,7 +36,6 @@
           ./modules/nvidia.nix
           ./modules/nextcloud.nix
           ./modules/usenet.nix
-          ./modules/myjellyfin.nix
           inputs.nixos-hardware.nixosModules.common-cpu-intel
         ];
       };
