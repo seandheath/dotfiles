@@ -2,7 +2,7 @@
 
   imports = [
     ../modules/gnome.nix
-    ../modules/mullvad.nix
+    #../modules/mullvad.nix
   ];
 
   # Enable CUPS and add driver for printer

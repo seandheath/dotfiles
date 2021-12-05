@@ -79,7 +79,7 @@ in {
         autoUpdateApps.startAt = "02:00:00";
         https = true;
         maxUploadSize = "32G";
-        hostName = "sunrise.nheath.com";
+        hostName = "nc.nheath.com";
         package = pkgs.nextcloud22;
         config = {
           adminuser = "sean";
