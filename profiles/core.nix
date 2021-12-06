@@ -34,6 +34,13 @@
   # Set CPU Governor
   powerManagement.cpuFreqGovernor = "performance";
 
+  # Enable automatic upgrade
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = true;
+    flake = "github:seandheath/dotfiles";
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
