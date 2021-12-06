@@ -4,6 +4,7 @@ mkShell {
   buildInputs = [
     nixpkgs-fmt
     git
+    nixFlakes
   ];
 
   shellHook = ''
