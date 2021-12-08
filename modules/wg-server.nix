@@ -10,11 +10,11 @@
       { # S
         publicKey = "4ZAwOX6/WKDCm0YBuaNXKhSVej+3pwGEOgFU5Ca2pBM=";
         presharedKeyFile = config.sops.secrets.wg-psk-s.path;
-        allowedIPs = [ "10.100.0.2/32" ];
+        allowedIPs = [ "10.100.0.2/32" "10.0.0.1/24" ];
       }
       { # D
         publicKey = "EVp4ViHecARK9fqh6Pa8fwJzEVxqvo+FpVCt3/ZTODQ=";
-        allowedIPs = [ "10.100.0.3/32" ];
+        allowedIPs = [ "10.100.0.3/32" "10.0.0.1/24" ];
       }
     ];
   };
