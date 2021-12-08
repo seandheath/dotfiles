@@ -57,7 +57,7 @@
         modules = [
           ./users/user
           ./profiles/workstation.nix
-          #./modules/wg-client.nix
+          ./modules/wg-client.nix
           inputs.nixos-hardware.nixosModules.dell-xps-13-9310
         ];
       };
