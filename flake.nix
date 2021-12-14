@@ -1,18 +1,19 @@
 {
   inputs = {
-    nur.url = "github:nix-community/NUR";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.05";
+    unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager.url = "github:nix-community/home-manager";
-    flake-utils.url = "github:numtide/flake-utils";
     sops-nix.url = "github:Mic92/sops-nix";
   };
   outputs = { self, ... }@inputs:
   let
-    pkgs = inputs.nixpkgs.legacyPackages."x86_64-linux"; 
     build-host = name: value: inputs.nixpkgs.lib.nixosSystem {
       system = value.system;
       modules = [
+        ({ pkgs, ... }: {
+          nixpkgs.overlays = [ (final: prev: {unstable = inputs.unstable.legacyPackages.${prev.system};}) ];
+        })
         ./hosts/${name}
         ./profiles/core.nix
         inputs.sops-nix.nixosModules.sops
@@ -57,7 +58,8 @@
         modules = [
           ./users/user
           ./profiles/workstation.nix
-          ./modules/wg-client.nix
+          ./modules/intel.nix
+          #./modules/wg-client.nix
           inputs.nixos-hardware.nixosModules.dell-xps-13-9310
         ];
       };
@@ -85,6 +87,5 @@
     };
   in {
     nixosConfigurations = builtins.mapAttrs build-host hosts;
-    devShell = import ./shell.nix { inherit pkgs; };
   };
 }

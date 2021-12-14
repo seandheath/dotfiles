@@ -13,4 +13,5 @@
       cursor.unfocused_hollow = true;
       shell = {
         program = "/run/current-system/sw/bin/bash"
+      };
 

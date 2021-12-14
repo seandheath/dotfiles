@@ -7,6 +7,7 @@
   ];
 
   home.packages = with pkgs; [
+    unstable.protonup
     ungoogled-chromium
     firefox
     joplin-desktop
@@ -26,7 +27,6 @@
     gnomeExtensions.appindicator
     vscodium
     mullvad-vpn
-    protonup
     slack
     glances
     wireshark

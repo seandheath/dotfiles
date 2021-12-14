@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ inputs, config, pkgs, ... }: {
 
   imports = [
     ../modules/gnome.nix
@@ -10,12 +10,21 @@
   services.printing.drivers = [ pkgs.brlaser ];
 
   # Set up virtualization
-  environment.systemPackages = with pkgs; [ virt-manager ];
+  environment.systemPackages = with pkgs; [
+    virt-manager
+    #inputs.unstable.protonup
+    #unstable.protonup
+  ];
+
+  # Enable dconf
   programs.dconf.enable = true;
   virtualisation = {
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
   };
+
+  # Enable steam
+  programs.steam.enable = true;
 
   # Set up sound with PipeWire
   hardware.pulseaudio.enable = false;
