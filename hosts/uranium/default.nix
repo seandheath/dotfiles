@@ -7,9 +7,14 @@
 
   # Update microcode
   hardware.cpu.intel.updateMicrocode = true;
+  hardware.enableRedistributableFirmware = true;
 
-  # Graphics
+
+  # Kernel config
   boot.kernelParams = [ "i915.enable_psr=0" ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.initrd.kernelModules = [ "i915" ];
+  boot.blacklistedKernelModules = [ "psmouse" ];
 
   boot.supportedFilesystems = [ "ntfs" ];
 
@@ -24,4 +29,5 @@
 
   # Enable firmware updates
   services.fwupd.enable = true;
+  services.fstrim.enable = true;
 }

@@ -7,10 +7,13 @@
   ];
 
   home.packages = with pkgs; [
+    godot
+    krita
+    mullvad-vpn
     unstable.protonup
     ungoogled-chromium
     firefox
-    joplin-desktop
+    unstable.joplin-desktop
     discord
     qucs
     kicad
@@ -26,7 +29,6 @@
     flameshot
     gnomeExtensions.appindicator
     vscodium
-    mullvad-vpn
     slack
     glances
     wireshark
@@ -48,7 +50,6 @@
     go-langserver
     zig
     file
-    joplin-desktop
     vlc
     libreoffice
     signal-desktop

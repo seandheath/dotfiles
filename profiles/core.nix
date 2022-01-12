@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, devel, ... }: {
   imports = [
     ../modules/sops.nix
   ];
@@ -13,6 +13,7 @@
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 16;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # List packages installed in system profile. To search, run:
@@ -25,7 +26,12 @@
   };
 
   # Enable unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    packageOverrides = pkgs: {
+      devel.config = config.nixpkgs.config;
+    };
+  };
 
   # Set localization stuff
   time.timeZone = "America/New_York";

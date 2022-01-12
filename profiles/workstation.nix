@@ -2,7 +2,8 @@
 
   imports = [
     ../modules/gnome.nix
-    #../modules/mullvad.nix
+    ../modules/mullvad.nix
+    ../modules/dod_certs.nix
   ];
 
   # Enable CUPS and add driver for printer
@@ -11,9 +12,10 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    devel.vmware-horizon-client
+    unstable.glibc
     virt-manager
-    #inputs.unstable.protonup
-    #unstable.protonup
+    unstable.protonup
   ];
 
   # Enable dconf
@@ -26,7 +28,14 @@
   # Enable steam
   programs.steam.enable = true;
 
+  # Enable smartcards
+  services.pcscd.enable = true;
+
   # Set up sound with PipeWire
+  #hardware.pulseaudio = {
+    #enable = true;
+    #support32Bit = true;
+  #};
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

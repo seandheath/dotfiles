@@ -1,6 +1,8 @@
 {
   inputs = {
+    devel.url = "github:seandheath/nixpkgs";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.05";
+    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager.url = "github:nix-community/home-manager";
@@ -12,7 +14,19 @@
       system = value.system;
       modules = [
         ({ pkgs, ... }: {
-          nixpkgs.overlays = [ (final: prev: {unstable = inputs.unstable.legacyPackages.${prev.system};}) ];
+          nixpkgs.overlays = [
+            (final: prev: {
+              #unstable = inputs.unstable.legacyPackages.${prev.system};
+              unstable = import inputs.unstable { system = final.system; };
+            })
+            (final: prev: {
+              #devel = inputs.devel.legacyPackages.${prev.system};
+              devel = import inputs.devel {
+                system = final.system;
+                config.allowUnfree = true;
+              };
+            })
+          ];
         })
         ./hosts/${name}
         ./profiles/core.nix
@@ -60,7 +74,7 @@
           ./profiles/workstation.nix
           ./modules/intel.nix
           #./modules/wg-client.nix
-          inputs.nixos-hardware.nixosModules.dell-xps-13-9310
+          #inputs.nixos-hardware.nixosModules.dell-xps-13-9310
         ];
       };
 
