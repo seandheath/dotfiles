@@ -7,6 +7,7 @@
   ];
 
   home.packages = with pkgs; [
+    unstable.torbrowser
     godot
     krita
     mullvad-vpn
