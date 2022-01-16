@@ -8,8 +8,6 @@
     bat
   ];
 
-  home.file.".fzfcompletion".source = ./assets/fzfcompletion.sh;
-
   # BASH
   programs.bash = {
     enable = true;

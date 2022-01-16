@@ -102,7 +102,7 @@
       # enable flow offloading for better throughput
         flowtable f {
           hook ingress priority 0;
-          devices = { eno1, enp3s0f0 };
+          devices = { eno1, enp3s0f0, wg0 };
         }
 
         chain output {
@@ -117,6 +117,10 @@
 
           # Allow returning traffic from wan and drop everything else
           iifname "eno1" ct state { established, related } counter accept
+
+          # Accept wireguard traffic
+          iif eno1 udp dport 51820 accept
+
           iifname "eno1" drop
         }
 
@@ -131,9 +135,11 @@
 
           # allow trusted network wan access
           iifname "enp3s0f0" oifname "eno1" counter accept comment "allow trusted LAN to WAN"
+          iifname "wg0" oifname "eno1" counter accept comment "allow wireguard to WAN"
 
           # allow established WAN to return
           iifname "eno1" oifname "enp3s0f0" ct state established,related counter accept comment "allow established back to LAN"
+          iifname "eno1" oifname "wg0" ct state established,related counter accept comment "allow established wireguard back to LAN"
         }
       }
       table ip nat {
@@ -168,6 +174,12 @@
       }
 
       sunrise.nheath.com {
+        template IN A {
+          answer "{{ .Name }} 0 IN A 10.0.0.1"
+        }
+      }
+
+      nc.nheath.com {
         template IN A {
           answer "{{ .Name }} 0 IN A 10.0.0.2"
         }
@@ -218,5 +230,14 @@
   systemd.targets.suspend.enable = false;
   systemd.targets.hibernate.enable = false;
   systemd.targets.hybrid-sleep.enable = false;
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "21.05"; # Did you read the comment?
+
 }
 

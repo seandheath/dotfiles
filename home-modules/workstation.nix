@@ -3,11 +3,18 @@
   imports = [
     ./core.nix
     ./go.nix
+    ./gnome.nix
   ];
 
   home.packages = with pkgs; [
+    unstable.torbrowser
+    godot
+    krita
+    mullvad-vpn
+    unstable.protonup
     ungoogled-chromium
     firefox
+    unstable.joplin-desktop
     discord
     qucs
     kicad
@@ -24,7 +31,7 @@
     gnomeExtensions.appindicator
     vscodium
     mullvad-vpn
-    #protonup
+    protonup
     slack
     glances
     wireshark
@@ -46,7 +53,6 @@
     go-langserver
     zig
     file
-    joplin-desktop
     vlc
     libreoffice
     signal-desktop

@@ -1,8 +1,9 @@
-{ config, pkgs, ... }: {
+{ inputs, config, pkgs, ... }: {
 
   imports = [
     ../modules/gnome.nix
     ../modules/mullvad.nix
+    ../modules/dod_certs.nix
   ];
 
   # Enable CUPS and add driver for printer
@@ -10,14 +11,31 @@
   services.printing.drivers = [ pkgs.brlaser ];
 
   # Set up virtualization
-  environment.systemPackages = with pkgs; [ virt-manager ];
+  environment.systemPackages = with pkgs; [
+    devel.vmware-horizon-client
+    unstable.glibc
+    virt-manager
+    unstable.protonup
+  ];
+
+  # Enable dconf
   programs.dconf.enable = true;
   virtualisation = {
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
   };
 
+  # Enable steam
+  programs.steam.enable = true;
+
+  # Enable smartcards
+  services.pcscd.enable = true;
+
   # Set up sound with PipeWire
+  #hardware.pulseaudio = {
+    #enable = true;
+    #support32Bit = true;
+  #};
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
