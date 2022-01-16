@@ -8,7 +8,6 @@
   home.packages = with pkgs; [
     ungoogled-chromium
     firefox
-    joplin-desktop
     discord
     qucs
     kicad
@@ -25,7 +24,7 @@
     gnomeExtensions.appindicator
     vscodium
     mullvad-vpn
-    protonup
+    #protonup
     slack
     glances
     wireshark
