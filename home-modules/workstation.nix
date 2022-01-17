@@ -7,6 +7,7 @@
   ];
 
   home.packages = with pkgs; [
+    crawl
     unstable.torbrowser
     godot
     krita
