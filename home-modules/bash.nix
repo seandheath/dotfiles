@@ -12,14 +12,17 @@
   programs.bash = {
     enable = true;
     initExtra = ''
+# ALIASES
+alias nr="sudo nixos-rebuild switch --flake /etc/nixos"
+alias ns="nix search nixpkgs"
+alias dmesg="dmesg --color=always"
+
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
 bind 'set menu-complete-display-prefix on'
 
 export XZ_DEFAULTS='-T0 -9'
 export EDITOR=nvim
-alias nr="sudo nixos-rebuild switch --flake /etc/nixos"
-alias ns="nix search nixpkgs"
 
 function direnvinit {
   if [ ! -e ./.envrc ]; then

@@ -83,8 +83,8 @@
         home-manager = "workstation";
         modules = [
           ./users/user
-          ./profiles/workstation
-          inputs.nixos-hardware.nixosModules.common-cpu-intel
+          ./profiles/workstation.nix
+          ./modules/nvidia.nix
         ];
       };
 

@@ -7,6 +7,9 @@
   ];
 
   home.packages = with pkgs; [
+    google-chrome
+    brasero
+    crawl
     unstable.torbrowser
     godot
     krita
@@ -36,7 +39,6 @@
     python310
     pcsctools
     opensc
-    gcc
     xournalpp
     htop
     tree
@@ -101,15 +103,15 @@
 
   services.nextcloud-client.enable = true;
 
-  services.redshift = {
-    enable = true;
-    settings.redshift.brightness-day = "1";
-    settings.redshift.brightness-night = "1";
-    temperature = {
-      day = 4700;
-      night = 3700;
-    };
-    dawnTime = "06:00-06:01";
-    duskTime = "16:00-16:01";
-  };
+  #services.redshift = {
+    #enable = true;
+    #settings.redshift.brightness-day = "1";
+    #settings.redshift.brightness-night = "1";
+    #temperature = {
+      #day = 4700;
+      #night = 3700;
+    #};
+    #dawnTime = "06:00-06:01";
+    #duskTime = "16:00-16:01";
+  #};
 }
