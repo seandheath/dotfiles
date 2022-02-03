@@ -4,6 +4,7 @@
     ../modules/gnome.nix
     ../modules/mullvad.nix
     ../modules/dod_certs.nix
+    ../modules/clamav.nix
   ];
 
   # Enable CUPS and add driver for printer

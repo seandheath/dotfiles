@@ -7,11 +7,13 @@
   ];
 
   home.packages = with pkgs; [
-<<<<<<< HEAD
+    transmission-gtk
+    android-tools
+    nix-index
+    nmap
+    clamav
     google-chrome
     brasero
-=======
->>>>>>> 022a994ac205e388b9ceed9fdc5664971a32a71f
     crawl
     unstable.torbrowser
     godot
