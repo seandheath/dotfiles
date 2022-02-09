@@ -85,6 +85,7 @@
           ./users/user
           ./profiles/workstation.nix
           ./modules/nvidia.nix
+          ./modules/kde.nix
         ];
       };
 
