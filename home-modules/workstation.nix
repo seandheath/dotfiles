@@ -8,6 +8,9 @@
 
   home.packages = with pkgs; [
     nmap
+    transmission-gtk
+    nix-index
+    clamav
     google-chrome
     brasero
     crawl
@@ -16,7 +19,6 @@
     krita
     mullvad-vpn
     unstable.protonup
-    ungoogled-chromium
     firefox
     unstable.joplin-desktop
     discord
