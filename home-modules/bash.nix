@@ -13,7 +13,7 @@
     enable = true;
     initExtra = ''
 # ALIASES
-alias nr="sudo nixos-rebuild switch --flake /etc/nixos"
+alias nr="sudo nixos-rebuild switch --flake /etc/nixos/"
 alias ns="nix search nixpkgs"
 alias dmesg="dmesg --color=always"
 

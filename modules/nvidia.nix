@@ -5,7 +5,7 @@ in {
   #hardware.nvidia.modesetting.enable = true;
   #boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
   services.xserver.videoDrivers = [ "nvidia" ];
-  services.xserver.displayManager.gdm.nvidiaWayland = false;
+  #services.xserver.displayManager.gdm.nvidiaWayland = false;
   #hardware.nvidia.package =
     #config.boot.kernelPackages.nvidiaPackages.beta;
   services.xserver.screenSection = ''
