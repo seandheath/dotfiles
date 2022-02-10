@@ -7,6 +7,7 @@
   ];
 
   home.packages = with pkgs; [
+    ksuperkey
     nmap
     transmission-gtk
     nix-index
