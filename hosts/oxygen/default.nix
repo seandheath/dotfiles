@@ -3,7 +3,7 @@
     ./hardware-configuration.nix
   ];
 
-  services.xserver.displayManager.gdm.nvidiaWayland = true;
+  #services.xserver.displayManager.gdm.nvidiaWayland = true;
 
   boot.kernelModules = [ "kvm-amd" ];
 

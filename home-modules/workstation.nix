@@ -20,7 +20,6 @@
     krita
     mullvad-vpn
     unstable.protonup
-    ungoogled-chromium
     firefox
     unstable.joplin-desktop
     discord
