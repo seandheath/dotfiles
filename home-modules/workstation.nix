@@ -7,10 +7,9 @@
   ];
 
   home.packages = with pkgs; [
-    transmission-gtk
-    android-tools
-    nix-index
     nmap
+    transmission-gtk
+    nix-index
     clamav
     google-chrome
     brasero
