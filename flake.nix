@@ -74,7 +74,7 @@
           ./profiles/workstation.nix
           ./modules/intel.nix
           #./modules/wg-client.nix
-          #inputs.nixos-hardware.nixosModules.dell-xps-13-9310
+          inputs.nixos-hardware.nixosModules.dell-xps-13-9310
         ];
       };
 

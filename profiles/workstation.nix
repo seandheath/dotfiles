@@ -1,7 +1,7 @@
 { inputs, config, pkgs, ... }: {
 
   imports = [
-    ../modules/gnome.nix
+    ../modules/kde.nix
     ../modules/mullvad.nix
     ../modules/dod_certs.nix
     ../modules/clamav.nix
