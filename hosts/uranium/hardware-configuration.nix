@@ -23,6 +23,12 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/83216da6-c4ce-40c3-9dd2-389282300ec2";
       fsType = "btrfs";
+      options = [
+        "noatime"
+        "nodiratime"
+        "compress=lzo"
+        "discard"
+      ];
     };
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/544E-B89A";

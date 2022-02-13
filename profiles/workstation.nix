@@ -17,6 +17,8 @@
     unstable.glibc
     virt-manager
     unstable.protonup
+    kwalletmanager
+    kwallet-pam
   ];
 
   # Enable dconf

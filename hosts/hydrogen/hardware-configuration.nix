@@ -16,6 +16,10 @@
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/ad6e86ad-65fc-451f-8024-a3da378453d5";
     fsType = "xfs";
+    options = [ 
+      "noatime"
+      "nodiratime"
+    ];
   };
 
   fileSystems."/boot" = {
@@ -26,7 +30,12 @@
   fileSystems."/data" = {
     device = "/dev/disk/by-uuid/75c4fbbf-7ab0-42f2-b333-31d825d280c2";
     fsType = "btrfs";
-    options = [ "compress=zstd" "noatime" ];
+    options = [
+      "compress=zstd"
+      "noatime"
+      "nodiratime"
+      "autodefrag"
+    ];
   };
 
   swapDevices = [{
