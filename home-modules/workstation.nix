@@ -4,6 +4,8 @@
     ./core.nix
     ./go.nix
     ./gnome.nix
+    ./kitty.nix
+    ./alacritty.nix
   ];
 
   home.packages = with pkgs; [
@@ -15,6 +17,7 @@
     google-chrome
     brasero
     crawl
+    crawlTiles
     unstable.torbrowser
     godot
     krita
@@ -33,7 +36,6 @@
     tmux
     tintin
     jellyfin-media-player
-    inconsolata
     flameshot
     gnomeExtensions.appindicator
     vscodium
@@ -91,7 +93,7 @@
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" =
       {
         binding = "<Alt>Return";
-        command = "/run/current-system/sw/bin/gnome-terminal";
+        command = "/run/current-system/sw/bin/env -u WAYLAND_DISPLAY /etc/profiles/per-user/user/bin/alacritty";
         name = "open-terminal";
       };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" =

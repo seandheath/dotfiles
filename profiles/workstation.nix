@@ -1,7 +1,7 @@
 { inputs, config, pkgs, ... }: {
 
   imports = [
-    ../modules/kde.nix
+    ../modules/gnome.nix
     ../modules/mullvad.nix
     ../modules/dod_certs.nix
     ../modules/clamav.nix
@@ -19,6 +19,8 @@
     unstable.protonup
     kwalletmanager
     kwallet-pam
+    b612
+    inconsolata
   ];
 
   # Enable dconf
@@ -33,6 +35,20 @@
 
   # Enable smartcards
   services.pcscd.enable = true;
+
+  # Fonts
+  fonts.fonts = with pkgs; [
+    b612
+    inconsolata
+  ];
+  fonts.fontconfig = {
+    enable = true;
+    cache32Bit = true;
+    defaultFonts = {
+      monospace = [ "Inconsolata" "Source Code Pro" ];
+      sansSerif = [ "B612" "DejaVu Sans" ];
+    };
+  };
 
   # Set up sound with PipeWire
   #hardware.pulseaudio = {
