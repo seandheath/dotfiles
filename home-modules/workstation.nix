@@ -68,7 +68,7 @@
   ];
 
   dconf.settings = {
-    "org/gnome/mutter" = { workspaces-only-on-primary = "false"; };
+    "org/gnome/mutter" = { workspaces-only-on-primary = "true"; };
     "org/gnome/terminal/legacy" = { theme-variant = "dark"; };
     "org/gnome/desktop/interface" = {
       enable-hot-corners = false;
@@ -102,6 +102,11 @@
         command = "flameshot gui";
         name = "screenshot";
       };
+    "org/gnome/desktop/background" = {
+      picture-uri = "none";
+      primary-color = "0x000000";
+      color-shading-type = "solid";
+    };
   };
 
   programs.vscode = {

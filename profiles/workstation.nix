@@ -40,13 +40,15 @@
   fonts.fonts = with pkgs; [
     b612
     inconsolata
+    iosevka
+    aileron
   ];
   fonts.fontconfig = {
     enable = true;
     cache32Bit = true;
     defaultFonts = {
       monospace = [ "Inconsolata" "Source Code Pro" ];
-      sansSerif = [ "B612" "DejaVu Sans" ];
+      sansSerif = [ "Aileron" "DejaVu Sans" ];
     };
   };
 

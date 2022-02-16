@@ -88,7 +88,7 @@ in {
     settings = {
       scrolling.history = 100000;
       font = {
-        normal.family = "Inconsolata";
+        #normal.family = "Inconsolata";
         size = 14;
       };
       draw_bold_text_with_bright_colors = true;
