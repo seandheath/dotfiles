@@ -7,12 +7,18 @@
     ../modules/clamav.nix
   ];
 
+  # Fix bluetooth for controller
+  boot.extraModprobeConfig = ''
+    options bluetooth disable_ertm=1
+  '';
+
   # Enable CUPS and add driver for printer
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.brlaser ];
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    joycond
     devel.vmware-horizon-client
     unstable.glibc
     virt-manager
@@ -21,6 +27,7 @@
     kwallet-pam
     b612
     inconsolata
+    xow
   ];
 
   # Enable dconf
