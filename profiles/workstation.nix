@@ -20,6 +20,7 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    crawl
     bitwarden
     joycond
     devel.vmware-horizon-client

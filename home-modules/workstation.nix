@@ -16,8 +16,6 @@
     clamav
     google-chrome
     brasero
-    crawl
-    crawlTiles
     unstable.torbrowser
     godot
     krita
@@ -27,7 +25,6 @@
     unstable.joplin-desktop
     discord
     qucs
-    kicad
     filezilla
     bibletime
     nextcloud-client
