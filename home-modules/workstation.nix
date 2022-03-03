@@ -27,7 +27,7 @@
     unstable.joplin-desktop
     discord
     qucs
-    kicad
+    #kicad
     filezilla
     bibletime
     nextcloud-client

@@ -18,6 +18,8 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    shattered-pixel-dungeon
+    glxinfo
     joycond
     devel.vmware-horizon-client
     unstable.glibc
