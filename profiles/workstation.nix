@@ -12,6 +12,8 @@
     options bluetooth disable_ertm=1
   '';
 
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod;
+
   # Enable CUPS and add driver for printer
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.brlaser ];
@@ -20,13 +22,13 @@
   environment.systemPackages = with pkgs; [
     shattered-pixel-dungeon
     glxinfo
+    crawl
+    bitwarden
     joycond
     devel.vmware-horizon-client
     unstable.glibc
     virt-manager
     unstable.protonup
-    kwalletmanager
-    kwallet-pam
     b612
     inconsolata
     xow
@@ -62,10 +64,6 @@
   };
 
   # Set up sound with PipeWire
-  #hardware.pulseaudio = {
-    #enable = true;
-    #support32Bit = true;
-  #};
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
