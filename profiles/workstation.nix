@@ -20,6 +20,8 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    shattered-pixel-dungeon
+    glxinfo
     crawl
     bitwarden
     joycond
@@ -27,8 +29,6 @@
     unstable.glibc
     virt-manager
     unstable.protonup
-    kwalletmanager
-    kwallet-pam
     b612
     inconsolata
     xow
@@ -64,10 +64,6 @@
   };
 
   # Set up sound with PipeWire
-  #hardware.pulseaudio = {
-    #enable = true;
-    #support32Bit = true;
-  #};
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

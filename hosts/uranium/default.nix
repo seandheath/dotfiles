@@ -12,7 +12,6 @@
 
   # Kernel config
   boot.kernelParams = [ "i915.enable_psr=0" ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.kernelModules = [ "i915" ];
   boot.blacklistedKernelModules = [ "psmouse" ];
 

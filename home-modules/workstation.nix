@@ -112,16 +112,4 @@
   };
 
   services.nextcloud-client.enable = true;
-
-  #services.redshift = {
-    #enable = true;
-    #settings.redshift.brightness-day = "1";
-    #settings.redshift.brightness-night = "1";
-    #temperature = {
-      #day = 4700;
-      #night = 3700;
-    #};
-    #dawnTime = "06:00-06:01";
-    #duskTime = "16:00-16:01";
-  #};
 }
