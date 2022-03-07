@@ -20,6 +20,8 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    thunderbird
+    protonmail-bridge
     shattered-pixel-dungeon
     glxinfo
     crawl
