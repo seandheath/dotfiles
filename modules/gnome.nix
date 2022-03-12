@@ -10,18 +10,22 @@ in {
   environment.gnome.excludePackages = with pkgs; [
     gnome.cheese
     gnome.gnome-music
-    epiphany
     gnome.totem
     gnome.tali
     gnome.iagno
     gnome.hitori
     gnome.atomix
     gnome-tour
-    gnome.gnome-contacts
   ];
 
   # Enables keyboard shortcuts
   programs.dconf.enable = true;
+
+  # Enable evolution
+  programs.evolution = {
+    enable = true;
+    plugins = [ pkgs.evolution-ews ];
+  };
 
   # Enable applet indicators
   services.udev.packages = with pkgs; [ gnome3.gnome-settings-daemon ];

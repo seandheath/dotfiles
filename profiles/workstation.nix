@@ -20,6 +20,12 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    protonmail-bridge
+    solvespace
+    cataclysm-dda-git
+    pioneer
+    freeciv
+    zeroad
     shattered-pixel-dungeon
     glxinfo
     crawl

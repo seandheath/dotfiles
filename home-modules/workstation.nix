@@ -16,6 +16,7 @@
     clamav
     google-chrome
     brasero
+    tor-browser-bundle-bin
     godot
     krita
     mullvad-vpn
