@@ -16,7 +16,6 @@
     clamav
     google-chrome
     brasero
-    unstable.torbrowser
     godot
     krita
     mullvad-vpn
@@ -61,7 +60,7 @@
     vlc
     libreoffice
     signal-desktop
-    opensans-ttf
+    open-sans
   ];
 
   dconf.settings = {
