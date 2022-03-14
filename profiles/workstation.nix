@@ -20,7 +20,10 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    rustup
+    pkg-config
     protonmail-bridge
+    airshipper
     solvespace
     cataclysm-dda-git
     pioneer
