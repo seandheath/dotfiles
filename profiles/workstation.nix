@@ -33,7 +33,6 @@
     glxinfo
     crawl
     bitwarden
-    joycond
     devel.vmware-horizon-client
     unstable.glibc
     virt-manager
@@ -55,6 +54,9 @@
 
   # Enable smartcards
   services.pcscd.enable = true;
+
+  # Enable controllers
+  #services.joycond.enable = true;
 
   # Fonts
   fonts.fonts = with pkgs; [
