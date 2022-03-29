@@ -24,10 +24,16 @@
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 22 80 443 6789 7878 8096 8989 ];
 
+  # Added kdeconnect for gnome
   programs.kdeconnect = {
     enable = true;
     package = pkgs.gnomeExtensions.gsconnect;
   };
+
+  # Add kodi to hydrogen
+  environment.systemPackages = with pkgs; [
+    kodi
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
