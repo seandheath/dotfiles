@@ -51,7 +51,6 @@
           ./modules/nvidia.nix
           ./modules/nextcloud.nix
           ./modules/usenet.nix
-          inputs.nixos-hardware.nixosModules.common-cpu-intel
         ];
       };
       
