@@ -187,7 +187,7 @@
 
       brother.local {
         template IN A {
-          answer "{{ .Name }} 0 IN A 10.0.0.5"
+          answer "{{ .Name }} 0 IN A 10.0.0.30"
         }
       }
 
@@ -219,7 +219,11 @@
           '';
   };
 
-  services.openssh.enable = true;
+  services.openssh.enable = {
+    enable = true;
+    passwordAuthentication = false;
+    permitRootLogin = "no";
+  };
 
   # Disable sound.
   sound.enable = false;
