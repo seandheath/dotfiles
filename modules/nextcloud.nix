@@ -80,7 +80,7 @@ in {
         https = true;
         maxUploadSize = "32G";
         hostName = "nc.nheath.com";
-        package = pkgs.nextcloud22;
+        package = pkgs.nextcloud23;
         config = {
           adminuser = "sean";
           adminpassFile = adminpass;
@@ -117,7 +117,7 @@ in {
       };
       security.acme = {
         acceptTerms = true;
-        email = "sunrise@nheath.com";
+        defaults.email = "sunrise@nheath.com";
       };
       systemd.services."nextcloud-setup" = {
         requires = [ "postgresql.service" ];
