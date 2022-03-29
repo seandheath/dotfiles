@@ -51,6 +51,7 @@
           ./modules/nvidia.nix
           ./modules/nextcloud.nix
           ./modules/usenet.nix
+          ./modules/gnome.nix
         ];
       };
       
