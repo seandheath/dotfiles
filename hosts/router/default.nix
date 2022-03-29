@@ -219,7 +219,7 @@
           '';
   };
 
-  services.openssh.enable = {
+  services.openssh = {
     enable = true;
     passwordAuthentication = false;
     permitRootLogin = "no";
