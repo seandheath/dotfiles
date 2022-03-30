@@ -185,7 +185,7 @@
 
       nc.nheath.com {
         template IN A {
-          answer "{{ .Name }} 0 IN A 10.0.0.2"
+          answer "{{ .Name }} 0 IN A 10.0.0.1"
         }
       }
 

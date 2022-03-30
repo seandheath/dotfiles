@@ -14,25 +14,17 @@
       enableACME = true;
       forceSSL = true;
       locations."/" = {
-        proxyPass = "http://10.0.0.2:80";
+        proxyPass = "http://10.0.0.2/";
         proxyWebsockets = true;
       };
-      extraConfig = ''
-        proxy_ssl_server_name on;
-        proxy_pass_header Authorization;
-      '';
     };
     virtualHosts."hs.nheath.com" = {
       enableACME = true;
       forceSSL = true;
       locations."/" = {
-        proxyPass = "http://127.0.0.1:8080";
+        proxyPass = "http://127.0.0.1:8080/";
         proxyWebsockets = true;
       };
-      extraConfig = ''
-        proxy_ssl_server_name on;
-        proxy_pass_header Authorization;
-      '';
     };
   };
 }
