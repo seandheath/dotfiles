@@ -177,6 +177,12 @@
         }
       }
 
+      hs.nheath.com {
+        template IN A {
+          answer "{{ .Name }} 0 IN A 10.0.0.1"
+        }
+      }
+
       nc.nheath.com {
         template IN A {
           answer "{{ .Name }} 0 IN A 10.0.0.2"
