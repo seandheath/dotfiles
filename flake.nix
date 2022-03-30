@@ -93,8 +93,8 @@
         home-manager = "server";
         modules = [
           ./users/user
-          ./modules/ddlient.nix
-          ./modules/wg-server.nix
+          #./modules/ddlient.nix
+          #./modules/wg-server.nix
           inputs.nixos-hardware.nixosModules.common-cpu-amd
         ];
       };
