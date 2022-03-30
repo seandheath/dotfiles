@@ -1,5 +1,8 @@
 { config, ... }:
 {
+  security.acme = {
+    acceptTerms = true;
+  };
   services.nginx = {
     enable = true;
     recommendedProxySettings = true;
