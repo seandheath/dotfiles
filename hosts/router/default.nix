@@ -33,8 +33,8 @@
     "net.ipv6.conf.all.use_tempaddr" = 0;
 
     # On WAN, allow IPv6 autoconfiguration and tempory address use.
-    "net.ipv6.conf.eno1.accept_ra" = 2;
-    "net.ipv6.conf.eno1.autoconf" = 1;
+    "net.ipv6.conf.enp3s0f1.accept_ra" = 2;
+    "net.ipv6.conf.enp3s0f1.autoconf" = 1;
 
     # Update kernel buffer to 64M
     "net.core.wmem_max" = 67108864;
@@ -76,16 +76,17 @@
   # replicates the default behaviour.
   networking.useDHCP = false;
   networking.interfaces.enp3s0f0.useDHCP = false;
-  networking.interfaces.enp3s0f1.useDHCP = false;
   networking.interfaces.enp4s0f0.useDHCP = false;
   networking.interfaces.enp4s0f1.useDHCP = false;
-  networking.interfaces.eno1 = {
+  networking.interfaces.eno1.useDHCP = false;
+
+  # WAN Connection
+  networking.interfaces.enp3s0f1 = {
     useDHCP = true;
     mtu = 9000;
   };
-  networking.firewall.enable = false;
-  networking.nat.enable = false;
-  networking.nameservers = [ "10.0.0.1" ];
+
+  # LAN Connection
   networking.interfaces.enp3s0f0 = {
     mtu = 9000; # jumbo frames
     ipv4.addresses = [{
@@ -93,6 +94,10 @@
       prefixLength = 24;
     }];
   };
+
+  networking.firewall.enable = false;
+  networking.nat.enable = false;
+  networking.nameservers = [ "10.0.0.1" ];
   networking.dhcpcd.persistent = true;
 
   networking.nftables = {
@@ -102,7 +107,7 @@
       # enable flow offloading for better throughput
         flowtable f {
           hook ingress priority 0;
-          devices = { eno1, enp3s0f0, wg0 };
+          devices = { enp3s0f0, enp3s0f1 };
         }
 
         chain output {
@@ -116,12 +121,12 @@
           iifname "enp3s0f0" counter accept
 
           # Allow returning traffic from wan and drop everything else
-          iifname "eno1" ct state { established, related } counter accept
+          iifname "enp3s0f1" ct state { established, related } counter accept
 
           # Accept wireguard traffic
-          iif eno1 udp dport 51820 accept
+          iif enp3s0f1 udp dport 51820 accept
 
-          iifname "eno1" drop
+          iifname "enp3s0f1" drop
         }
 
         chain forward {
@@ -134,29 +139,29 @@
           ip protocol { tcp, udp } flow offload @f
 
           # allow trusted network wan access
-          iifname "enp3s0f0" oifname "eno1" counter accept comment "allow trusted LAN to WAN"
-          iifname "wg0" oifname "eno1" counter accept comment "allow wireguard to WAN"
+          iifname "enp3s0f0" oifname "enp3s0f1" counter accept comment "allow trusted LAN to WAN"
+          iifname "wg0" oifname "enp3s0f1" counter accept comment "allow wireguard to WAN"
 
           # allow established WAN to return
-          iifname "eno1" oifname "enp3s0f0" ct state established,related counter accept comment "allow established back to LAN"
-          iifname "eno1" oifname "wg0" ct state established,related counter accept comment "allow established wireguard back to LAN"
+          iifname "enp3s0f1" oifname "enp3s0f0" ct state established,related counter accept comment "allow established back to LAN"
+          iifname "enp3s0f1" oifname "wg0" ct state established,related counter accept comment "allow established wireguard back to LAN"
         }
       }
       table ip nat {
-
-        chain prerouting {
-          type nat hook prerouting priority -100;
-          #iif "eno1" tcp dport 80 log prefix "nc " dnat 10.0.0.2:80
-          #iif "eno1" tcp dport 443 log prefix "nc " dnat 10.0.0.2:443
-        }
 
         chain nat-out {
           type nat hook output priority filter; policy accept;
         }
 
+        chain prerouting {
+          type nat hook prerouting priority -100;
+          iif "enp3s0f1" tcp dport 80 dnat 10.0.0.2:80
+          iif "enp3s0f1" tcp dport 443 dnat 10.0.0.2:443
+        }
+
         chain postrouting {
           type nat hook postrouting priority filter; policy accept;
-          #oifname "eno1" masquerade
+          #oifname "enp3s0f1" masquerade
           masquerade
         }
       }
@@ -225,6 +230,24 @@
     permitRootLogin = "no";
   };
 
+  users.groups.ddclient = {};
+  users.users.ddclient = {
+    isSystemUser = true;
+    group = "ddclient";
+  };
+
+  sops.secrets.ddclient-config.owner = config.users.users.ddclient.name;
+  sops.secrets.ddclient-config.group = config.users.groups.ddclient.name;
+  sops.secrets.ddclient-config.mode = "0400";
+
+  services.ddclient = {
+    enable = true;
+    configFile = config.sops.secrets.ddclient-config.path;
+  };
+
+  systemd.services.ddclient.serviceConfig.User = pkgs.lib.mkForce config.users.users.ddclient.name;
+  systemd.services.ddclient.serviceConfig.Group = pkgs.lib.mkForce config.users.groups.ddclient.name;
+
   # Disable sound.
   sound.enable = false;
   hardware.pulseaudio.enable = false;
@@ -244,4 +267,3 @@
   system.stateVersion = "21.05"; # Did you read the comment?
 
 }
-
