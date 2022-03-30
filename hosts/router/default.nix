@@ -254,9 +254,7 @@
   # Enable headscale
   services.headscale = {
     enable = true;
-    address = "10.0.0.1";
   };
-
 
   # Disable suspend
   systemd.targets.sleep.enable = false;
