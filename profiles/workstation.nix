@@ -20,6 +20,7 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    headscale
     tailscale
     protonmail-bridge
     solvespace

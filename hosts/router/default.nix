@@ -253,6 +253,9 @@
   hardware.pulseaudio.enable = false;
 
   # Enable headscale
+  environment.systemPackages = with pkgs; [
+    headscale
+  ];
   services.headscale = {
     enable = true;
     serverUrl = "https://hs.nheath.com";
