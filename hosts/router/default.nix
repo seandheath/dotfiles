@@ -190,7 +190,7 @@
         }
       }
 
-      brother.local {
+      brother-printer.local {
         template IN A {
           answer "{{ .Name }} 0 IN A 10.0.0.30"
         }
