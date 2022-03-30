@@ -146,8 +146,8 @@
 
         chain prerouting {
           type nat hook prerouting priority -100;
-          iif "eno1" tcp dport 80 log prefix "nc " dnat 10.0.0.2:80
-          iif "eno1" tcp dport 443 log prefix "nc " dnat 10.0.0.2:443
+          #iif "eno1" tcp dport 80 log prefix "nc " dnat 10.0.0.2:80
+          #iif "eno1" tcp dport 443 log prefix "nc " dnat 10.0.0.2:443
         }
 
         chain nat-out {
