@@ -123,8 +123,7 @@
           # Allow returning traffic from wan and drop everything else
           iifname "enp3s0f1" ct state { established, related } counter accept
 
-          # Accept wireguard traffic
-          iif enp3s0f1 udp dport 51820 accept
+          tcp dport {ssh,http,https} accept
 
           iifname "enp3s0f1" drop
         }
@@ -140,7 +139,6 @@
 
           # allow trusted network wan access
           iifname "enp3s0f0" oifname "enp3s0f1" counter accept comment "allow trusted LAN to WAN"
-          iifname "wg0" oifname "enp3s0f1" counter accept comment "allow wireguard to WAN"
 
           # allow established WAN to return
           iifname "enp3s0f1" oifname "enp3s0f0" ct state established,related counter accept comment "allow established back to LAN"
@@ -151,12 +149,6 @@
 
         chain nat-out {
           type nat hook output priority filter; policy accept;
-        }
-
-        chain prerouting {
-          type nat hook prerouting priority -100;
-          iif "enp3s0f1" tcp dport 80 dnat 10.0.0.2:80
-          iif "enp3s0f1" tcp dport 443 dnat 10.0.0.2:443
         }
 
         chain postrouting {
