@@ -20,6 +20,7 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    tailscale
     protonmail-bridge
     solvespace
     cataclysm-dda-git
@@ -68,6 +69,9 @@
       sansSerif = [ "Aileron" "DejaVu Sans" ];
     };
   };
+
+  # Enable tailscale
+  services.tailscale.enable = true;
 
   # Set up sound with PipeWire
   hardware.pulseaudio.enable = false;

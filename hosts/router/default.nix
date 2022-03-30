@@ -125,6 +125,7 @@
           iifname "enp3s0f1" ct state { established, related } counter accept
 
           iifname "enp3s0f1" tcp dport {ssh,http,https} accept
+          {tcp, udp} dport 50443 accept
 
           iifname "enp3s0f1" drop
         }
@@ -254,6 +255,7 @@
   # Enable headscale
   services.headscale = {
     enable = true;
+    dns.baseDomain = "hs.nheath.com";
   };
 
   # Disable suspend
