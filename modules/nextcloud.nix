@@ -68,6 +68,7 @@ in {
         maxUploadSize = "32G";
         hostName = "nc.nheath.com";
         package = pkgs.nextcloud23;
+        overwriteProtocol = "https";
         config = {
           adminuser = "sean";
           adminpassFile = adminpass;
