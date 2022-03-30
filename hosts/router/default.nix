@@ -124,7 +124,7 @@
           # Allow returning traffic from wan and drop everything else
           iifname "enp3s0f1" ct state { established, related } counter accept
 
-          tcp dport {ssh,http,https} accept
+          iifname "enp3s0f1" tcp dport {ssh,http,https} accept
 
           iifname "enp3s0f1" drop
         }
