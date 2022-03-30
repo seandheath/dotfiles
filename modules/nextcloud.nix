@@ -101,7 +101,7 @@ in {
         recommendedTlsSettings = true;
         sslCiphers = "AES256+EECDH:AES256+EDH:!aNULL";
         virtualHosts = {
-          "sunrise.nheath.com" = {
+          "nc.nheath.com" = {
             forceSSL = true;
             enableACME = true;
           };
@@ -117,7 +117,7 @@ in {
       };
       security.acme = {
         acceptTerms = true;
-        defaults.email = "sunrise@nheath.com";
+        defaults.email = "nc@nheath.com";
       };
       systemd.services."nextcloud-setup" = {
         requires = [ "postgresql.service" ];
