@@ -52,9 +52,6 @@
           priority = 99;
         };
       };
-      extraConfig = ''
-        access_log /var/log/nginx/${domain}.access.log;
-      '';
     };
   };
 }
