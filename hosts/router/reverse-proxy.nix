@@ -8,7 +8,7 @@
     enable = true;
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
-    recommendedGzipSettinsg = true;
+    recommendedGzipSettings = true;
     recommendedOptimisation = true;
     virtualHosts."nc.nheath.com" = {
       enableACME = true;
