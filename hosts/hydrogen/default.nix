@@ -33,6 +33,7 @@
   # Add kodi to hydrogen
   environment.systemPackages = with pkgs; [
     kodi
+    vlc
   ];
 
   # This value determines the NixOS release from which the default
