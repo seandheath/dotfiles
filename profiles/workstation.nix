@@ -20,9 +20,14 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    koreader
+    kdiff3
+    meld
+    rustup
+    pkg-config
     headscale
-    tailscale
     protonmail-bridge
+    airshipper
     solvespace
     cataclysm-dda-git
     pioneer
@@ -32,7 +37,6 @@
     glxinfo
     crawl
     bitwarden
-    joycond
     devel.vmware-horizon-client
     unstable.glibc
     virt-manager
@@ -54,6 +58,9 @@
 
   # Enable smartcards
   services.pcscd.enable = true;
+
+  # Enable controllers
+  #services.joycond.enable = true;
 
   # Fonts
   fonts.fonts = with pkgs; [
