@@ -25,6 +25,7 @@
     meld
     rustup
     pkg-config
+    headscale
     protonmail-bridge
     airshipper
     solvespace
@@ -76,6 +77,9 @@
       sansSerif = [ "Aileron" "DejaVu Sans" ];
     };
   };
+
+  # Enable tailscale
+  services.tailscale.enable = true;
 
   # Set up sound with PipeWire
   hardware.pulseaudio.enable = false;

@@ -38,18 +38,6 @@ in {
       };
     };
     config = { config, pkgs, builtins, ... }: {
-      hardware.opengl = {    
-        enable = true;
-        driSupport = true;
-        driSupport32Bit = true;
-        extraPackages = with pkgs; [ libva vaapiVdpau libvdpau-va-gl ];
-        extraPackages32 = with pkgs.pkgsi686Linux; [
-          libva
-          vaapiVdpau
-          libvdpau-va-gl
-        ];
-        setLdLibraryPath = true;    
-      };
       environment.systemPackages = with pkgs; [
         ffmpeg
       ];
