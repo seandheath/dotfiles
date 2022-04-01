@@ -17,7 +17,7 @@
         proxyPass = "http://10.0.0.2/";
         proxyWebsockets = true;
         extraConfig = ''
-          client_max_body_size 4G;
+          client_max_body_size 32G;
         '';
       };
     };
