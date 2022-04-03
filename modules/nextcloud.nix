@@ -7,6 +7,16 @@ let
   adminpass = config.sops.secrets.nextcloud-adminpass.path;
   dbpass = config.sops.secrets.nextcloud-dbpass.path;
 in {
+  systemd.services.nextcloudRestart = {
+    enable = true;
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+    description = "Restart nextcloud after everything is done";
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "/run/current-system/sw/bin/sleep 30s && systemctl restart container@nextcloud";
+    };
+  };
   sops.secrets.nextcloud-adminpass = {
     owner = config.users.users.nccnextcloud.name;
     group = config.users.groups.nccnextcloud.name;

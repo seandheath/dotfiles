@@ -161,6 +161,15 @@
       }
     '';
   };
+  systemd.services.nftablesRestart = {
+    enable = true;
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+    description = "Restart nftables";
+    serviceConfig = {
+      ExecStart = "/run/current-system/sw/bin/sleep 30s && systemctl restart nftables.service"
+    };
+  };
 
   # set up DNS
   services.coredns = {
