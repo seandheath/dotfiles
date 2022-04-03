@@ -13,7 +13,7 @@ in {
     after = [ "network.target" ];
     description = "Restart nextcloud after everything is done";
     serviceConfig = {
-      Type = "simple";
+      Type = "forking";
       ExecStartPre = ''/run/current-system/sw/bin/sleep 30s'';
       ExecStart = ''/run/current-system/sw/bin/systemctl restart container@nextcloud'';
     };
