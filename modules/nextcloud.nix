@@ -74,7 +74,7 @@ in {
         enable = true;
         autoUpdateApps.enable = true;
         autoUpdateApps.startAt = "02:00:00";
-        https = false;
+        https = true;
         maxUploadSize = "32G";
         hostName = "nc.nheath.com";
         package = pkgs.nextcloud23;

@@ -46,7 +46,7 @@
         system = "x86_64-linux";
         home-manager = "server";
         modules = [
-          ./users/user
+          ./users/hydrogenuser
           ./profiles/server.nix
           ./modules/nvidia.nix
           ./modules/nextcloud.nix
