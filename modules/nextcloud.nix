@@ -14,7 +14,7 @@ in {
     description = "Restart nextcloud after everything is done";
     serviceConfig = {
       Type = "simple";
-      ExecStart = ''$(/run/current-system/sw/bin/sleep 30s && systemctl restart container@nextcloud)'';
+      ExecStart = ''/run/current-system/sw/bin/sleep 30s && /run/current-system/sw/bin/systemctl restart container@nextcloud'';
     };
   };
   sops.secrets.nextcloud-adminpass = {
