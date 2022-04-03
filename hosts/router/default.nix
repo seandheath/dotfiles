@@ -166,7 +166,7 @@
     after = [ "network.target" ];
     description = "Restart nftables";
     serviceConfig = {
-      ExecStart = "/run/current-system/sw/bin/sleep 30s && systemctl restart nftables.service"
+      ExecStart = "/run/current-system/sw/bin/sleep 30s && systemctl restart nftables.service";
     };
   };
 
