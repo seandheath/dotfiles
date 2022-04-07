@@ -84,6 +84,7 @@
         modules = [
           ./users/user
           ./profiles/workstation.nix
+          ./modules/kde.nix
           ./modules/nvidia.nix
         ];
       };
