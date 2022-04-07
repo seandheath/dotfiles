@@ -20,7 +20,6 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
-    evolution-ews
     koreader
     kdiff3
     meld
@@ -77,6 +76,12 @@
       monospace = [ "Inconsolata" "Source Code Pro" ];
       sansSerif = [ "Aileron" "DejaVu Sans" ];
     };
+  };
+
+  # Enable evolution
+  programs.evolution = {
+    enable = true;
+    plugins = [ pkgs.evolution-ews ];
   };
 
   # Enable tailscale
