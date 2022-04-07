@@ -11,8 +11,6 @@
     options bluetooth disable_ertm=1
   '';
 
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod;
-
   # Enable CUPS and add driver for printer
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.brlaser ];
