@@ -75,12 +75,6 @@
     };
   };
 
-  # Enable evolution
-  programs.evolution = {
-    enable = true;
-    plugins = [ pkgs.evolution-ews ];
-  };
-
   # Enable tailscale
   services.tailscale.enable = true;
 
