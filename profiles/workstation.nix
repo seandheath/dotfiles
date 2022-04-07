@@ -20,6 +20,7 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    evolution-ews
     koreader
     kdiff3
     meld
