@@ -3,12 +3,15 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../../profiles/core.nix
+    ../../profiles/workstation.nix
+    ../../modules/kde.nix
+    ../../modules/intel.nix
   ];
 
   # Update microcode
   hardware.cpu.intel.updateMicrocode = true;
   hardware.enableRedistributableFirmware = true;
-
 
   # Kernel config
   boot.kernelParams = [ "i915.enable_psr=0" ];
