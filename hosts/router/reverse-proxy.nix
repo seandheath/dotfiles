@@ -2,6 +2,7 @@
 {
   security.acme = {
     acceptTerms = true;
+    email = "se@nheath.com";
   };
   services.nginx = {
     enable = true;
