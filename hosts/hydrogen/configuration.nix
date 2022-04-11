@@ -5,7 +5,7 @@
     ../../profiles/server.nix
     ../../modules/kde.nix
     ../../modules/nvidia.nix
-    ../../users/user.nix
+    ../../users/hydrogen-user.nix
   ];
 
   hardware.cpu.amd.updateMicrocode = true;
