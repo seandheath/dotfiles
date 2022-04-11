@@ -1,12 +1,14 @@
 { config, pkgs, ... }: {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../../profiles/core.nix
+    ../../profiles/server.nix
+    ../../modules/kde.nix
+    ../../modules/nvidia.nix
+    ../../users/user.nix
   ];
 
   hardware.cpu.amd.updateMicrocode = true;
-
-  # Keep GPU alive even though we're headless
-  hardware.nvidia.nvidiaPersistenced = true;
 
   networking.hostName = "hydrogen"; # Define your hostname.
   networking.wireless.enable = false; # Enables wireless support via wpa_supplicant.
@@ -27,7 +29,6 @@
   # Added kdeconnect for gnome
   programs.kdeconnect = {
     enable = true;
-    package = pkgs.gnomeExtensions.gsconnect;
   };
 
   # Add kodi to hydrogen

@@ -106,10 +106,5 @@
     };
   };
 
-  programs.vscode = {
-    enable = true;
-    package = pkgs.vscodium;
-  };
-
   services.nextcloud-client.enable = true;
 }

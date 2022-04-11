@@ -8,6 +8,8 @@
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./reverse-proxy.nix
+    ../../profiles/core.nix
+    ../../users/user.nix
   ];
 
   boot.kernel.sysctl = {

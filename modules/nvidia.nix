@@ -1,6 +1,4 @@
-{ config, pkgs, ... }:
-let unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-in {
+{ config, pkgs, ... }: {
   # Enable NVIDIA driver
   services.xserver.videoDrivers = [ "nvidia" ];
   services.xserver.screenSection = ''

@@ -1,15 +1,13 @@
-{ config, pkgs, devel, ... }: {
+{ config, pkgs, ... }:
+let
+  unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz;
+  develTarball = fetchTarball https://github.com/seandheath/nixpkgs/archive/master.tar.gz;
+in {
   imports = [
-    ../modules/sops.nix
+    "${builtins.fetchTarball "https://github.com/Mic92/sops-nix/archive/master.tar.gz"}/modules/sops"
+    /home/user/dotfiles/modules/sops.nix
   ];
-  nix = {
-    package = pkgs.nixFlakes;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-      keep-outputs = false
-      keep-derivations = false
-    '';
-  };
+  hardware.enableRedistributableFirmware = true;
 
   # Automatically collect garbage
   nix.gc = {
@@ -27,7 +25,7 @@
   environment = {
     variables.editor = "nvim";
     systemPackages = with pkgs; [
-      neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      neovim 
       sops
       srm
       p7zip
@@ -39,7 +37,8 @@
   nixpkgs.config = {
     allowUnfree = true;
     packageOverrides = pkgs: {
-      devel.config = config.nixpkgs.config;
+      unstable = import unstableTarball { config = config.nixpkgs.config; };
+      devel = import develTarball { config = config.nixpkgs.config; };
     };
   };
 

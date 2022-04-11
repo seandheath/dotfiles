@@ -1,9 +1,9 @@
 { inputs, config, pkgs, ... }: {
 
   imports = [
-    ../modules/mullvad.nix
-    ../modules/dod_certs.nix
-    ../modules/clamav.nix
+    /home/user/dotfiles/modules/mullvad.nix
+    /home/user/dotfiles/modules/dod_certs.nix
+    /home/user/dotfiles/modules/clamav.nix
   ];
 
   # Fix bluetooth for controller
@@ -17,8 +17,16 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    unstable.joplin-desktop
+    nextcloud-client
+    git
+    mullvad-vpn
+    teams
+    vscode
+    firefox
     koreader
     kdiff3
+    kmail
     meld
     rustup
     pkg-config
@@ -32,9 +40,9 @@
     zeroad
     shattered-pixel-dungeon
     glxinfo
-    crawl
+    unstable.crawl
     bitwarden
-    devel.vmware-horizon-client
+    vmware-horizon-client
     unstable.glibc
     virt-manager
     unstable.protonup
@@ -74,9 +82,6 @@
       sansSerif = [ "Aileron" "DejaVu Sans" ];
     };
   };
-
-  # Enable tailscale
-  services.tailscale.enable = true;
 
   # Set up sound with PipeWire
   hardware.pulseaudio.enable = false;

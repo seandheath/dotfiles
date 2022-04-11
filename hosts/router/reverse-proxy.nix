@@ -18,6 +18,8 @@
         proxyWebsockets = true;
         extraConfig = ''
           client_max_body_size 32G;
+	  client_body_timeout 300s;
+	  fastcgi_buffers 64 4k;
         '';
       };
     };
