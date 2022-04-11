@@ -26,11 +26,6 @@
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 22 80 443 6789 7878 8096 8989 ];
 
-  # Added kdeconnect for gnome
-  programs.kdeconnect = {
-    enable = true;
-  };
-
   # Add kodi to hydrogen
   environment.systemPackages = with pkgs; [
     kodi
