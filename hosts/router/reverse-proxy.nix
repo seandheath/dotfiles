@@ -11,7 +11,6 @@
     recommendedOptimisation = true;
     virtualHosts."nc.nheath.com" = {
       enableACME = true;
-      email = "se@nheath.com";
       forceSSL = true;
       locations."/" = {
         proxyPass = "http://10.0.0.2/";
