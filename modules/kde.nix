@@ -6,6 +6,8 @@
   services.gvfs.enable = true;
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
-  #hardware.bluetooth.package = pkgs.bluezFull;
+  environment.systemPackages = with pkgs; [
+    ksuperkey
+  ];
 }
 

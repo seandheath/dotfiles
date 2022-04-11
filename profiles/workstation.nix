@@ -18,6 +18,7 @@
   # Set up virtualization
   environment.systemPackages = with pkgs; [
     unstable.joplin-desktop
+    bibletime
     nextcloud-client
     git
     mullvad-vpn
