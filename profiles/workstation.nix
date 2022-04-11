@@ -31,7 +31,6 @@
     rustup
     pkg-config
     protonmail-bridge
-    airshipper
     solvespace
     cataclysm-dda-git
     pioneer
