@@ -30,7 +30,6 @@
     meld
     rustup
     pkg-config
-    headscale
     protonmail-bridge
     airshipper
     solvespace
