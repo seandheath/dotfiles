@@ -264,23 +264,6 @@
   sound.enable = false;
   hardware.pulseaudio.enable = false;
 
-  # Enable headscale
-  environment.systemPackages = with pkgs; [
-    headscale
-  ];
-  services.headscale = {
-    enable = true;
-    serverUrl = "https://hs.nheath.com";
-    dns.baseDomain = "hs.nheath.com";
-    settings = {
-      grpc_listen_addr = "127.0.0.1:50443";
-      grpc_allow_insecure = true;
-      ip_prefixes = [
-        "10.100.0.0/16"
-      ];
-    };
-  };
-
   # Disable suspend
   systemd.targets.sleep.enable = false;
   systemd.targets.suspend.enable = false;
