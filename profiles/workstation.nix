@@ -18,6 +18,10 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    libreoffice
+    syncthingtray-minimal
+    gcc
+    unstable.go
     unstable.joplin-desktop
     bibletime
     nextcloud-client
@@ -42,7 +46,7 @@
     glxinfo
     unstable.crawl
     bitwarden
-    vmware-horizon-client
+    devel.vmware-horizon-client
     unstable.glibc
     virt-manager
     unstable.protonup
@@ -66,6 +70,8 @@
 
   # Enable controllers
   #services.joycond.enable = true;
+
+  services.gnome.gnome-keyring.enable = true;
 
   # Fonts
   fonts.fonts = with pkgs; [
