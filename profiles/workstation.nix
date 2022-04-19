@@ -1,9 +1,10 @@
 { inputs, config, pkgs, ... }: {
 
   imports = [
-    /home/user/dotfiles/modules/mullvad.nix
-    /home/user/dotfiles/modules/dod_certs.nix
-    /home/user/dotfiles/modules/clamav.nix
+    ../modules/mullvad.nix
+    ../modules/dod_certs.nix
+    ../modules/clamav.nix
+    ../modules/syncthing.nix
   ];
 
   # Fix bluetooth for controller
