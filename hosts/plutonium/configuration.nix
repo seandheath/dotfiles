@@ -13,6 +13,7 @@
       ../../profiles/workstation.nix
       ../../modules/kde.nix
       ../../modules/nvidia.nix
+      ../../modules/games.nix
       ../../users/user.nix
     ];
 
