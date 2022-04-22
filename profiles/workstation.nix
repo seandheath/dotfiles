@@ -19,7 +19,6 @@
   # Set up virtualization
   environment.systemPackages = with pkgs; [
     libreoffice
-    syncthingtray-minimal
     gcc
     unstable.go
     unstable.joplin-desktop

@@ -21,18 +21,15 @@ in {
   # Enables keyboard shortcuts
   programs.dconf.enable = true;
 
-  # Enable evolution
-  programs.evolution = {
-    enable = true;
-    plugins = [ pkgs.evolution-ews ];
-  };
-
   # Enable applet indicators
   services.udev.packages = with pkgs; [ gnome3.gnome-settings-daemon ];
 
   # Environment variables to set editor
   # and theme
   environment = {
+    systemPackages = with pkgs; [
+      gnome.gnome-tweak-tool
+    ];
     sessionVariables.GTK_THEME = "Adwaita:dark";
     etc = {
       "xdg/gtk-2.0/gtkrc".text = ''
@@ -60,4 +57,3 @@ in {
     style = "adwaita-dark";
   };
 }
-
