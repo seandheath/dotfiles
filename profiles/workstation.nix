@@ -18,6 +18,12 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    inkscape
+    texlive.combined.scheme-full
+    pandoc
+    ark
+    thunderbird-bin
+    tmux
     libreoffice
     syncthingtray-minimal
     gcc
