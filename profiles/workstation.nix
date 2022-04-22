@@ -25,7 +25,6 @@
     thunderbird-bin
     tmux
     libreoffice
-    syncthingtray-minimal
     gcc
     unstable.go
     unstable.joplin-desktop

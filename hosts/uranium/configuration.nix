@@ -5,7 +5,7 @@
     ./hardware-configuration.nix
     ../../profiles/core.nix
     ../../profiles/workstation.nix
-    ../../modules/kde.nix
+    ../../modules/gnome.nix
     ../../modules/intel.nix
     ../../users/user.nix
   ];
