@@ -18,6 +18,11 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    gnomeExtensions.gtile
+    alacritty
+    xournalpp
+    krita
+    thunderbird-bin
     libreoffice
     gcc
     unstable.go
@@ -27,7 +32,7 @@
     git
     mullvad-vpn
     teams
-    vscode
+    unstable.vscode
     firefox
     koreader
     kdiff3
