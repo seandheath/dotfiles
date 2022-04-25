@@ -23,6 +23,12 @@
     xournalpp
     krita
     thunderbird-bin
+    inkscape
+    texlive.combined.scheme-full
+    pandoc
+    ark
+    thunderbird-bin
+    tmux
     libreoffice
     gcc
     unstable.go
