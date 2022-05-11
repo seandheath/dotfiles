@@ -6,6 +6,7 @@
     ../../profiles/workstation.nix
     ../../modules/mullvad.nix
     ../../modules/nvidia.nix
+    ../../modules/gnome.nix
   ];
 
   boot.kernelModules = [ "kvm-amd" ];

@@ -21,6 +21,8 @@
     gimp
     brasero
     signal-desktop
+    filezilla
+    flameshot
     gnomeExtensions.gtile
     alacritty
     xournalpp
@@ -37,7 +39,6 @@
     unstable.go
     unstable.joplin-desktop
     bibletime
-    nextcloud-client
     git
     mullvad-vpn
     teams
