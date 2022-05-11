@@ -18,6 +18,9 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    gimp
+    brasero
+    signal-desktop
     gnomeExtensions.gtile
     alacritty
     xournalpp
