@@ -4,64 +4,10 @@
     ./core.nix
     ./go.nix
     ./gnome.nix
-    ./kitty.nix
-    ./alacritty.nix
   ];
 
-  home.packages = with pkgs; [
-    ksuperkey
-    nmap
-    transmission-gtk
-    nix-index
-    clamav
-    google-chrome
-    brasero
-    tor-browser-bundle-bin
-    godot
-    krita
-    mullvad-vpn
-    unstable.protonup
-    firefox
-    unstable.joplin-desktop
-    discord
-    qucs
-    filezilla
-    bibletime
-    nextcloud-client
-    inetutils
-    nixfmt
-    tmux
-    tintin
-    jellyfin-media-player
-    flameshot
-    gnomeExtensions.appindicator
-    vscodium
-    mullvad-vpn
-    protonup
-    slack
-    glances
-    wireshark
-    python310
-    pcsctools
-    opensc
-    xournalpp
-    htop
-    tree
-    git
-    gnomeExtensions.gtile
-    gnome.gnome-tweaks
-    fzf
-    keepassxc
-    teams
-    rustup
-    go
-    go-langserver
-    zig
-    file
-    vlc
-    libreoffice
-    signal-desktop
-    open-sans
+  home.sessionPath = [
+    "/home/user/go/bin"
   ];
 
   dconf.settings = {
@@ -105,6 +51,4 @@
       color-shading-type = "solid";
     };
   };
-
-  services.nextcloud-client.enable = true;
 }
