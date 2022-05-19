@@ -18,9 +18,12 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    unstable.android-tools
+    google-chrome
     filezilla
     flameshot
     gnomeExtensions.gtile
+    gnomeExtensions.color-picker
     alacritty
     xournalpp
     krita
@@ -56,7 +59,7 @@
     shattered-pixel-dungeon
     glxinfo
     unstable.crawl
-    bitwarden
+    unstable.bitwarden
     devel.vmware-horizon-client
     unstable.glibc
     virt-manager
