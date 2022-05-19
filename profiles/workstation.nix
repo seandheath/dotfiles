@@ -20,6 +20,9 @@
   environment.systemPackages = with pkgs; [
     unstable.android-tools
     google-chrome
+    gimp
+    brasero
+    signal-desktop
     filezilla
     flameshot
     gnomeExtensions.gtile
