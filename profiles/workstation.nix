@@ -18,6 +18,7 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    gnomeExtensions.syncthing-indicator
     gimp
     brasero
     signal-desktop
