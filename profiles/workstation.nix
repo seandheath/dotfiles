@@ -18,12 +18,14 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    vale
+    ripgrep
     gnomeExtensions.syncthing-indicator
     unstable.android-tools
     google-chrome
     gimp
     brasero
-    signal-desktop
+    unstable.signal-desktop
     filezilla
     flameshot
     gnomeExtensions.gtile
@@ -31,12 +33,10 @@
     alacritty
     xournalpp
     krita
-    thunderbird-bin
     inkscape
     texlive.combined.scheme-full
     pandoc
     ark
-    thunderbird-bin
     tmux
     libreoffice
     gcc
