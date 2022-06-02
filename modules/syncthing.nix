@@ -1,7 +1,4 @@
 { config, pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
-    unstable.syncthingtray
-  ];
   services.syncthing = {
     enable = true;
     user = "user";
