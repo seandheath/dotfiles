@@ -110,7 +110,7 @@
     53
     80
     443
-    14004
+    #14004
   ];
   networking.nat.enable = true;
   networking.nat.internalIPs = [
