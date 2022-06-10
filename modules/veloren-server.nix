@@ -24,4 +24,7 @@
       "--interval 30 --stop-timeout 130s --cleanup veloren-game-server-master"
     ];
   };
+  networking.firewall.allowedTCPPorts = [
+    14004
+  ];
 }

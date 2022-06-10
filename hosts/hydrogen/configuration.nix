@@ -25,7 +25,7 @@
 
   # Open ports in the firewall.
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ 22 80 443 6789 7878 8096 8989 ];
+  networking.firewall.allowedTCPPorts = [ 22 80 443 6789 7878 8096 8989 14004 ];
 
   # Add kodi to hydrogen
   environment.systemPackages = with pkgs; [
