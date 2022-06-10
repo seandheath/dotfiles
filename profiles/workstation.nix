@@ -18,6 +18,7 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    nextcloud-client
     unstable.airshipper
     tintin
     unstable.logseq
