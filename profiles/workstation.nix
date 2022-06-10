@@ -18,7 +18,6 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
-    nixgl.auto.nixGLDefault
     unstable.airshipper
     tintin
     unstable.logseq

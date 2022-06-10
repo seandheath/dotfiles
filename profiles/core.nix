@@ -2,7 +2,6 @@
 let
   unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz;
   develTarball = fetchTarball https://github.com/seandheath/nixpkgs/archive/master.tar.gz;
-  nixglTarball = fetchTarball https://github.com/guibou/nixGL/archive/main.tar.gz;
 in {
   imports = [
     "${builtins.fetchTarball "https://github.com/Mic92/sops-nix/archive/master.tar.gz"}/modules/sops"
@@ -50,7 +49,6 @@ in {
     packageOverrides = pkgs: {
       unstable = import unstableTarball { config = config.nixpkgs.config; };
       devel = import develTarball { config = config.nixpkgs.config; };
-      nixgl = import nixglTarball { config = config.nixpkgs.config; };
     };
   };
 
