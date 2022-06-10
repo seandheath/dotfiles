@@ -86,7 +86,7 @@
   # WAN Connection
   networking.interfaces.enp3s0f1 = {
     useDHCP = true;
-    mtu = 9000;
+    #mtu = 9000;
   };
 
   # LAN Connection
@@ -98,81 +98,27 @@
     }];
   };
 
-  networking.firewall.enable = false;
-  networking.nat.enable = false;
+  networking.firewall.enable = true;
+  networking.firewall.allowedTCPPorts = [
+    22
+    80
+    443
+    14004
+  ];
+  networking.nat.enable = true;
+  networking.nat.internalIPs = [
+    "10.0.0.0/24"
+  ];
+  networking.nat.externalInterface = "enp3s0f1";
+  networking.nat.forwardPorts = [
+    { # Veloren
+      destination = "10.0.0.2:14004";
+      proto = "tcp";
+      sourcePort = 14004;
+    }
+  ];
   networking.nameservers = [ "10.0.0.1" ];
   networking.dhcpcd.persistent = true;
-
-  networking.nftables = {
-    enable = true;
-    ruleset = ''
-      table ip filter {
-      # enable flow offloading for better throughput
-        flowtable f {
-          hook ingress priority 0;
-          devices = { enp3s0f0, enp3s0f1 };
-        }
-
-        chain output {
-          type filter hook output priority 100; policy accept;
-        }
-
-        chain input {
-          type filter hook input priority filter; policy drop;
-
-          # allow trusted networks to talk to the router
-          iifname "enp3s0f0" counter accept
-
-          # Allow returning traffic from wan and drop everything else
-          iifname "enp3s0f1" ct state { established, related } counter accept
-
-          iifname "enp3s0f1" tcp dport {ssh,http,https} accept
-
-          iifname "enp3s0f1" drop
-        }
-
-        chain forward {
-          type filter hook forward priority filter; policy drop;
-
-          # allow dnat traffic
-          ct status dnat accept
-
-          # enable flow offloading for better throughput
-          ip protocol { tcp, udp } flow offload @f
-
-          # allow trusted network wan access
-          iifname "enp3s0f0" oifname "enp3s0f1" counter accept comment "allow trusted LAN to WAN"
-
-          # allow established WAN to return
-          iifname "enp3s0f1" oifname "enp3s0f0" ct state established,related counter accept comment "allow established back to LAN"
-          iifname "enp3s0f1" oifname "wg0" ct state established,related counter accept comment "allow established wireguard back to LAN"
-        }
-      }
-      table ip nat {
-
-        chain nat-out {
-          type nat hook output priority filter; policy accept;
-        }
-
-        chain postrouting {
-          type nat hook postrouting priority filter; policy accept;
-          #oifname "enp3s0f1" masquerade
-          masquerade
-        }
-      }
-    '';
-  };
-  systemd.services.nftablesRestart = {
-    enable = true;
-    wantedBy = [ "multi-user.target" ];
-    after = [ "network.target" ];
-    description = "Restart nftables";
-    serviceConfig = {
-      Type="forking";
-      ExecStartPre = ''/run/current-system/sw/bin/sleep 30s'';
-      ExecStart = ''/run/current-system/sw/bin/systemctl restart nftables.service'';
-    };
-  };
 
   # set up DNS
   services.coredns = {
