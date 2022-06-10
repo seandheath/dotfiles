@@ -11,7 +11,7 @@
       "./veloren:/opt/veloren"
     ];
     environment = {
-      RUST_LOG = "debug,common::net=info"
+      RUST_LOG = "debug,common::net=info";
     };
   };
   virtualisation.oci-containers.containers.watchtower = {
