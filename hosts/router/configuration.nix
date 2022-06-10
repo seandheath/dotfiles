@@ -104,7 +104,6 @@
   ];
   networking.firewall.allowedTCPPorts = [
     22
-    22
     53
     80
     443
