@@ -18,9 +18,6 @@
       environment = {
         RUST_LOG = "debug,common::net=info";
       };
-      extraOptions = [
-        "-it"
-      ];
     };
     watchtower = {
       image = "containrrr/watchtower";
