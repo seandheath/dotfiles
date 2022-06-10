@@ -4,6 +4,7 @@
   networking.firewall.allowedTCPPorts = [
     14004
   ];
+  virtualisation.oci-containers.backend = "docker";
   virtualisation.oci-containers.containers.veloren-server = {
     image = "registry.gitlab.com/veloren/veloren/server-cli:nightly";
     autoStart = true;
