@@ -6,6 +6,7 @@
     ../../modules/gnome.nix
     ../../modules/nvidia.nix
     ../../modules/veloren-server.nix
+    ../../modules/nextcloud.nix
     ../../users/user-hydrogen.nix
   ];
 
