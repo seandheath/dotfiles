@@ -7,7 +7,7 @@
   virtualisation.oci-containers.backend = "docker";
   virtualisation.oci-containers.containers = {
     veloren = {
-      image = "registry.gitlab.com/veloren/veloren/server-cli:0.12";
+      image = "registry.gitlab.com/veloren/veloren/server-cli:0.12.0";
       autoStart = true;
       ports = [
         "14004:14004"
