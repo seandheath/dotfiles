@@ -2,13 +2,13 @@
 { config, pkgs, ... }:
 {
   virtualisation.oci-containers.containers.veloren-game-server-master = {
-    image = "registry.gitlab.com/veloren/veloren/server-cli:nightly";
+    image = "registry.gitlab.com/veloren/veloren/server-cli:latest";
     autoStart = true;
     ports = [
       "14004:14004"
     ];
     volumes = [
-      "./veloren:/opt/veloren"
+      "/home/user/veloren:/opt/veloren"
     ];
     environment = {
       RUST_LOG = "debug,common::net=info";
