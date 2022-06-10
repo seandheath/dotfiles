@@ -1,21 +1,11 @@
 { config, pkgs, ... }:
 let 
-  id = {
-    nextcloud = 2001;
-  };
   adminpass = config.sops.secrets.nextcloud-adminpass.path;
 in {
   sops.secrets.nextcloud-adminpass = {
     owner = config.users.users.nextcloud.name;
     group = config.users.groups.nextcloud.name;
     mode = "0400";
-  };
-  users.groups.nextcloud.gid = id.nextcloud;
-  users.users.nextcloud = {
-    isSystemUser = true;
-    uid = id.nextcloud;
-    group = "nextcloud";
-    home = "/home/nextcloud";
   };
   services.nextcloud = {
     enable = true;
