@@ -2,7 +2,7 @@
 { config, pkgs, ... }:
 {
   virtualisation.oci-containers.containers.veloren-game-server-master = {
-    image = "registry.gitlab.com/veloren/veloren/server-cli:latest";
+    image = "registry.gitlab.com/veloren/veloren/server-cli:nightly";
     autoStart = true;
     ports = [
       "14004:14004"
