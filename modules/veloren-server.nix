@@ -23,5 +23,6 @@
     environment = {
       RUST_LOG = "debug,common::net=info";
     };
+    extraOptions = [ "--userns=keep-id" ];
   };
 }
