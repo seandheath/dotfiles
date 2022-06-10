@@ -21,11 +21,12 @@
       extraOptions = [
         "-i"
         "-t"
-      ]
+      ];
+    };
+    watchtower = {
+      image = "containrrr/watchtower";
+      volumes = [ "/var/run/docker.sock:/var/run/docker.sock" ];
+      cmd = [ "--interval 30 --stop-timeout 130s --cleanup veloren"];
+    };
   };
-  watchtower = {
-    image = "containrrr/watchtower";
-    volumes = [ "/var/run/docker.sock:/var/run/docker.sock" ];
-    cmd = [ "--interval 30 --stop-timeout 130s --cleanup veloren"];
-  }
 }
