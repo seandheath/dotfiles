@@ -31,6 +31,7 @@
   environment.systemPackages = with pkgs; [
     kodi
     vlc
+    git
   ];
 
   # Enable sound
