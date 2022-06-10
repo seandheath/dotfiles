@@ -6,7 +6,7 @@
   ];
   users.groups.veloren = {};
   users.users.veloren = {
-    isNormalUser = true;
+    isSystemUser = true;
     group = config.users.groups.veloren.name;
     home = "/home/veloren";
   };
