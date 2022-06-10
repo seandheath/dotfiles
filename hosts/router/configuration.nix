@@ -99,8 +99,13 @@
   };
 
   networking.firewall.enable = true;
+  networking.firewall.allowedUDPPorts = [
+    53
+  ];
   networking.firewall.allowedTCPPorts = [
     22
+    22
+    53
     80
     443
     14004
