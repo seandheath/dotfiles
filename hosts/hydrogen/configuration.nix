@@ -5,6 +5,7 @@
     ../../profiles/server.nix
     ../../modules/kde.nix
     ../../modules/nvidia.nix
+    ../../modules/veloren-server.nix
     ../../users/user-hydrogen.nix
   ];
 
