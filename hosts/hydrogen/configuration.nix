@@ -3,7 +3,7 @@
     ./hardware-configuration.nix
     ../../profiles/core.nix
     ../../profiles/server.nix
-    ../../modules/kde.nix
+    ../../modules/gnome.nix
     ../../modules/nvidia.nix
     ../../modules/veloren-server.nix
     ../../users/user-hydrogen.nix
