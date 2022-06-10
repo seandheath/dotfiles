@@ -14,7 +14,7 @@ in {
   users.users.nextcloud = {
     isSystemUser = true;
     uid = id.nextcloud;
-    group = users.groups.nextcloud.name;
+    group = config.users.groups.nextcloud.name;
     home = "/home/nextcloud";
   };
   services.nextcloud = {
