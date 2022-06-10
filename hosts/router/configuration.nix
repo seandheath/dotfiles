@@ -99,6 +99,9 @@
   };
 
   networking.firewall.enable = true;
+  networking.firewall.trustedInterfaces = [
+    "enp3s0f0"
+  ];
   networking.firewall.allowedUDPPorts = [
     53
   ];
