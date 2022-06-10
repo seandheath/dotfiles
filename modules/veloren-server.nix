@@ -13,7 +13,7 @@
         "14004:14004"
       ];
       volumes = [
-        "/home/user/veloren:/opt/veloren"
+        "/home/user/veloren:/opt/userdata"
       ];
       environment = {
         RUST_LOG = "debug,common::net=info";

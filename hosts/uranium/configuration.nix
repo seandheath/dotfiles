@@ -21,7 +21,7 @@ in {
 
   environment.systemPackages = with pkgs; [
     nixgl.nixGLIntel
-  ]
+  ];
 
   boot.kernel.sysctl = {
     "dev.i915.perf_stream_paranoid" = 0;
