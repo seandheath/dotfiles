@@ -20,7 +20,6 @@
       };
       extraOptions = [
         "-i"
-        "-t"
       ];
     };
     watchtower = {
