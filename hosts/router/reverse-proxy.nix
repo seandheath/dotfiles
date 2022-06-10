@@ -31,5 +31,13 @@
         '';
       };
     };
+    # Config for valoren server
+    streamConfig = ''
+      server {
+        listen 14004;
+        proxy_timeout 20s;
+        proxy_pass 10.0.0.2:14004;
+      }
+    '';
   };
 }
