@@ -19,7 +19,7 @@
         RUST_LOG = "debug,common::net=info";
       };
       extraOptions = [
-        "-i"
+        "-it"
       ];
     };
     watchtower = {
