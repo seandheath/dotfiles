@@ -18,6 +18,9 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    unstable.airshipper
+    tintin
+    unstable.logseq
     vale
     ripgrep
     gnomeExtensions.syncthing-indicator

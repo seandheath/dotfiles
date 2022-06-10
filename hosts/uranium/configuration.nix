@@ -10,6 +10,10 @@
     ../../users/user.nix
   ];
 
+  boot.kernel.sysctl = {
+    "dev.i915.perf_stream_paranoid" = 0;
+  };
+
   # Update microcode
   hardware.cpu.intel.updateMicrocode = true;
   hardware.enableRedistributableFirmware = true;

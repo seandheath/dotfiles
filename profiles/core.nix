@@ -9,6 +9,14 @@ in {
   ];
   hardware.enableRedistributableFirmware = true;
 
+  # Enable flakes
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
   # Automatically collect garbage
   nix.gc = {
     automatic = true;
