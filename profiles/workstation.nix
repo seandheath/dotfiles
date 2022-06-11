@@ -18,6 +18,8 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    gopls
+    tintin
     vale
     ripgrep
     gnomeExtensions.syncthing-indicator
