@@ -1,6 +1,7 @@
 { modules, config, pkgs, ... }:
-
-{
+let
+  nixglTarball = fetchTarball https://github.com/guibou/nixGL/archive/main.tar.gz;
+in {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../profiles/core.nix
@@ -9,6 +10,22 @@
     ../../modules/intel.nix
     ../../users/user.nix
   ];
+
+  # Enable unfree packages
+  nixpkgs.config = {
+    allowUnfree = true;
+    packageOverrides = pkgs: {
+      nixgl = import nixglTarball {};
+    };
+  };
+
+  environment.systemPackages = with pkgs; [
+    nixgl.nixGLIntel
+  ];
+
+  boot.kernel.sysctl = {
+    "dev.i915.perf_stream_paranoid" = 0;
+  };
 
   # Update microcode
   hardware.cpu.intel.updateMicrocode = true;

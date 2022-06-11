@@ -9,6 +9,14 @@ in {
   ];
   hardware.enableRedistributableFirmware = true;
 
+  # Enable flakes
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
   # Automatically collect garbage
   nix.gc = {
     automatic = true;
@@ -25,6 +33,8 @@ in {
   environment = {
     variables.editor = "nvim";
     systemPackages = with pkgs; [
+      ripgrep
+      git
       neovim 
       sops
       srm
@@ -45,11 +55,4 @@ in {
   # Set localization stuff
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
-
-  # Enable automatic upgrade
-  system.autoUpgrade = {
-    enable = true;
-    allowReboot = true;
-    flake = "github:seandheath/dotfiles";
-  };
 }

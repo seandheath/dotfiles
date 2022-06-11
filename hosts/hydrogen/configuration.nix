@@ -3,9 +3,12 @@
     ./hardware-configuration.nix
     ../../profiles/core.nix
     ../../profiles/server.nix
-    ../../modules/kde.nix
+    ../../modules/gnome.nix
     ../../modules/nvidia.nix
-    ../../users/hydrogen-user.nix
+    ../../modules/veloren-server.nix
+    ../../modules/nextcloud.nix
+    ../../modules/usenet.nix
+    ../../users/user-hydrogen.nix
   ];
 
   hardware.cpu.amd.updateMicrocode = true;
@@ -24,12 +27,13 @@
 
   # Open ports in the firewall.
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ 22 80 443 6789 7878 8096 8989 ];
+  networking.firewall.allowedTCPPorts = [ 22 80 443 6789 7878 8096 8989 14004 ];
 
   # Add kodi to hydrogen
   environment.systemPackages = with pkgs; [
     kodi
     vlc
+    git
   ];
 
   # Enable sound
@@ -47,6 +51,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "21.05"; # Did you read the comment?
+  system.stateVersion = "22.05"; # Did you read the comment?
 
 }

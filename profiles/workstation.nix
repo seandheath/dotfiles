@@ -20,9 +20,10 @@
   environment.systemPackages = with pkgs; [
     gopls
     tintin
+    nextcloud-client
+    unstable.airshipper
     vale
     ripgrep
-    gnomeExtensions.syncthing-indicator
     unstable.android-tools
     google-chrome
     gimp
