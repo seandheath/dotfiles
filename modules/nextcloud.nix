@@ -25,11 +25,11 @@ in {
       overwriteProtocol = "https";
       adminuser = "sean";
       adminpassFile = adminpass;
-      dbuser = "nextcloud";
-      dbpassFile = dbpass;
+      #dbuser = "nextcloud";
+      #dbpassFile = dbpass;
       dbtype = "pgsql";
-      dbname = "nextcloud";
-      dbhost = "/run/postgresql";
+      #dbname = "nextcloud";
+      #dbhost = "/run/postgresql";
       extraTrustedDomains = [ "10.0.0.2" ];
     };
   };
