@@ -20,7 +20,7 @@
   environment.systemPackages = with pkgs; [
     gopls
     tintin
-    nextcloud-client
+    unstable.nextcloud-client
     unstable.airshipper
     vale
     ripgrep
