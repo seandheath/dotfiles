@@ -12,7 +12,6 @@
   ];
 
   hardware.cpu.amd.updateMicrocode = true;
-
   networking.hostName = "hydrogen"; # Define your hostname.
   networking.wireless.enable = false; # Enables wireless support via wpa_supplicant.
   networking.enableIPv6 = false;
@@ -27,7 +26,7 @@
 
   # Open ports in the firewall.
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ 22 80 443 6789 7878 8096 8989 14004 ];
+  networking.firewall.allowedTCPPorts = [ 22 80 443 6789 7878 8096 8989 ];
 
   # Add kodi to hydrogen
   environment.systemPackages = with pkgs; [
