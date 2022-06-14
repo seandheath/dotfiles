@@ -15,11 +15,6 @@ in {
   };
   services.nextcloud = {
     enable = true;
-    caching = {
-      apcu = false;
-      redis = true;
-      memcached = false;
-    };
     autoUpdateApps.enable = true;
     autoUpdateApps.startAt = "02:00:00";
     https = true;
@@ -38,7 +33,6 @@ in {
       extraTrustedDomains = [ "10.0.0.2" ];
     };
   };
-  services.redis.enable = true;
   services.postgresql = {
     enable = true;
     ensureDatabases = [ "nextcloud" ];
