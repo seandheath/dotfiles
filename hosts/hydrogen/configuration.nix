@@ -5,7 +5,7 @@
     ../../profiles/server.nix
     ../../modules/gnome.nix
     ../../modules/nvidia.nix
-    ../../modules/veloren-server.nix
+    #../../modules/veloren-server.nix
     ../../modules/nextcloud.nix
     ../../modules/usenet.nix
     ../../users/user-hydrogen.nix
