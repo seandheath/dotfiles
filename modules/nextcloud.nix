@@ -26,7 +26,7 @@ in {
       adminuser = "sean";
       adminpassFile = adminpass;
       #dbuser = "nextcloud";
-      #dbpassFile = dbpass;
+      dbpassFile = dbpass;
       dbtype = "pgsql";
       #dbname = "nextcloud";
       #dbhost = "/run/postgresql";
