@@ -15,6 +15,11 @@ in {
   };
   services.nextcloud = {
     enable = true;
+    caching = {
+      apcu = false;
+      redis = true;
+      memcached = false;
+    }
     autoUpdateApps.enable = true;
     autoUpdateApps.startAt = "02:00:00";
     https = true;
@@ -25,27 +30,24 @@ in {
       overwriteProtocol = "https";
       adminuser = "sean";
       adminpassFile = adminpass;
-      #dbuser = "nextcloud";
+      dbuser = "nextcloud";
       dbpassFile = dbpass;
       dbtype = "pgsql";
-      #dbname = "nextcloud";
-      #dbhost = "/run/postgresql";
+      dbname = "nextcloud";
+      dbhost = "/run/postgresql";
       extraTrustedDomains = [ "10.0.0.2" ];
     };
   };
+  services.redis.enable = true;
   services.postgresql = {
     enable = true;
-    ensureDatabases = [
-      "nextcloud"
-    ];
-    ensureUsers = [
-      {
+    ensureDatabases = [ "nextcloud" ];
+    ensureUsers = [{
         name = "nextcloud";
         ensurePermissions = {
           "DATABASE nextcloud" = "ALL PRIVILEGES";
         };
-      }
-    ];
+    }];
   };
   systemd.services."nextcloud-setup" = {
     requires = ["postgresql.service"];
