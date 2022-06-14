@@ -19,7 +19,7 @@ in {
       apcu = false;
       redis = true;
       memcached = false;
-    }
+    };
     autoUpdateApps.enable = true;
     autoUpdateApps.startAt = "02:00:00";
     https = true;
