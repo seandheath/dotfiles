@@ -16,7 +16,12 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/de8fd8e7-7135-494d-9a5f-8fa65a090832";
       fsType = "btrfs";
-      options = [ "compress" "noatime" ];
+      options = [
+        "noatime"
+        "nodiratime"
+        "compress=lzo"
+        "discard"
+      ];
     };
 
   boot.initrd.luks.devices."crypt-root".device = "/dev/disk/by-uuid/69473814-9a81-4094-b66c-9fff21f70ca1";
@@ -24,7 +29,12 @@
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/e9105016-5b05-4545-96cc-c934a58f7524";
       fsType = "btrfs";
-      options = [ "compress" "noatime" ];
+      options = [
+        "noatime"
+        "nodiratime"
+        "compress=lzo"
+        "discard"
+      ];
     };
 
   boot.initrd.luks.devices."crypt-home".device = "/dev/disk/by-uuid/31ac64ac-30aa-4ebf-86d2-a430f68a0452";

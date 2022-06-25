@@ -16,6 +16,12 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/acacae35-6fbb-44f7-a80d-673a178405e4";
       fsType = "btrfs";
+      options = [
+        "noatime"
+        "nodiratime"
+        "compress=lzo"
+        "discard"
+      ];
     };
 
   fileSystems."/boot" =
@@ -26,6 +32,12 @@
   fileSystems."/data" =
     { device = "/dev/disk/by-uuid/75c4fbbf-7ab0-42f2-b333-31d825d280c2";
       fsType = "btrfs";
+      options = [
+        "noatime"
+        "nodiratime"
+        "compress=lzo"
+        "discard"
+      ];
     };
 
   swapDevices =
