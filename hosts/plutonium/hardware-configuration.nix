@@ -9,6 +9,12 @@
   fileSystems."/" =
     { device = "/dev/mapper/root";
       fsType = "btrfs";
+      options = [
+        "noatime"
+        "nodiratime"
+        "compress=lzo"
+        "discard"
+      ];
     };
 
   boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/5f8fac75-ffde-4bb1-b45a-c1de9b6eded6";
@@ -21,6 +27,12 @@
   fileSystems."/home" =
     { device = "/dev/mapper/home";
       fsType = "btrfs";
+      options = [
+        "noatime"
+        "nodiratime"
+        "compress=lzo"
+        "discard"
+      ];
     };
 
   boot.initrd.luks.devices."home".device = "/dev/disk/by-uuid/c7dc0ba0-7639-4717-ba57-ac493e8c46ff";
@@ -28,6 +40,12 @@
   fileSystems."/data" =
     { device = "/dev/mapper/data";
       fsType = "btrfs";
+      options = [
+        "noatime"
+        "nodiratime"
+        "compress=lzo"
+        "discard"
+      ];
     };
 
   boot.initrd.luks.devices."data".device = "/dev/disk/by-uuid/b0a419d8-c344-4b38-b73f-f08deffb21e4";

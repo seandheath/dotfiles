@@ -112,6 +112,9 @@
     };
   };
 
+  # Disable lid switch for laptops
+  services.logind.lidSwitch = "ignore";
+
   # Set up sound with PipeWire
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
