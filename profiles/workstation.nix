@@ -18,8 +18,10 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    unstable.blightmud
+    python310
+    unstable.micromamba
     gopls
-    tintin
     unstable.nextcloud-client
     unstable.airshipper
     vale

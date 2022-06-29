@@ -23,6 +23,7 @@ bind 'set menu-complete-display-prefix on'
 
 export XZ_DEFAULTS='-T0 -9'
 export EDITOR=nvim
+export PATH=$PATH:/home/user/go/bin
 
 function direnvinit {
   if [ ! -e ./.envrc ]; then
