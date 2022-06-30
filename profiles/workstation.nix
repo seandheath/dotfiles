@@ -18,28 +18,21 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
-    gopls
-    tintin
+    unstable.gopls
     unstable.nextcloud-client
     unstable.airshipper
-    vale
     ripgrep
-    unstable.android-tools
     google-chrome
     gimp
     brasero
     unstable.signal-desktop
     filezilla
     flameshot
-    gnomeExtensions.gtile
-    gnomeExtensions.color-picker
-    alacritty
     xournalpp
     krita
     inkscape
     texlive.combined.scheme-full
     pandoc
-    ark
     tmux
     libreoffice
     gcc
@@ -51,19 +44,8 @@
     teams
     unstable.vscode
     firefox
-    koreader
-    kdiff3
-    kmail
-    meld
     rustup
     pkg-config
-    protonmail-bridge
-    solvespace
-    cataclysm-dda-git
-    pioneer
-    freeciv
-    zeroad
-    shattered-pixel-dungeon
     glxinfo
     unstable.crawl
     unstable.bitwarden
@@ -73,7 +55,6 @@
     unstable.protonup
     b612
     inconsolata
-    xow
   ];
 
   # Enable dconf
