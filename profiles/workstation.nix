@@ -19,6 +19,8 @@
   # Set up virtualization
   environment.systemPackages = with pkgs; [
     unstable.gopls
+    unstable.blightmud
+    python310
     unstable.nextcloud-client
     unstable.airshipper
     ripgrep
