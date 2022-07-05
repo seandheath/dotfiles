@@ -51,7 +51,7 @@
     git
     mullvad-vpn
     teams
-    unstable.vscode
+    unstable.vscode-fhs
     firefox
     koreader
     kdiff3

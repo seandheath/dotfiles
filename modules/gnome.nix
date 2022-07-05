@@ -29,6 +29,7 @@ in {
   environment = {
     systemPackages = with pkgs; [
       gnome.gnome-tweaks
+      gnome.gnome-terminal
       gnomeExtensions.appindicator
     ];
     sessionVariables.GTK_THEME = "Adwaita:dark";
