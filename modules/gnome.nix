@@ -31,6 +31,7 @@ in {
       gnome.gnome-tweaks
       gnome.gnome-terminal
       gnomeExtensions.appindicator
+      gnomeExtensions.gtile
     ];
     sessionVariables.GTK_THEME = "Adwaita:dark";
     etc = {
