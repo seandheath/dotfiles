@@ -44,7 +44,7 @@
     git
     mullvad-vpn
     teams
-    unstable.vscode
+    unstable.vscode-fhs
     firefox
     rustup
     pkg-config
