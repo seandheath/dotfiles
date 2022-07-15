@@ -18,6 +18,8 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    graphviz
+    inetutils
     unstable.gopls
     unstable.blightmud
     python310

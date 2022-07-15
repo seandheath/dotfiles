@@ -12,7 +12,7 @@ in {
   # Enable flakes
   nix = {
     package = pkgs.nixFlakes;
-    settings.auto-optimise-store: true
+    settings.auto-optimise-store = true;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';

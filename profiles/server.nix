@@ -57,7 +57,6 @@
     vulkan-loader
     vulkan-validation-layers
     ffmpeg-full
-    cudatoolkit
   ];
 
   # Enable SSH
