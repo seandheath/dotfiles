@@ -5,7 +5,6 @@
     ../../profiles/server.nix
     ../../modules/gnome.nix
     ../../modules/nvidia.nix
-    #../../modules/veloren-server.nix
     ../../modules/nextcloud.nix
     ../../modules/usenet.nix
     ../../users/user-hydrogen.nix
@@ -30,10 +29,25 @@
 
   # Add kodi to hydrogen
   environment.systemPackages = with pkgs; [
+    unstable.airshipper
     kodi
     vlc
     git
   ];
+
+# Disable suspend
+services.xserver.displayManager.gdm.autoSuspend=false;
+  security.polkit.extraConfig = ''
+    polkit.addRule(function(action, subject) {
+        if (action.id == "org.freedesktop.login1.suspend" ||
+            action.id == "org.freedesktop.login1.suspend-multiple-sessions" ||
+            action.id == "org.freedesktop.login1.hibernate" ||
+            action.id == "org.freedesktop.login1.hibernate-multiple-sessions")
+        {
+            return polkit.Result.NO;
+        }
+    });
+  '';
 
   # Enable sound
   hardware.pulseaudio.enable = false;

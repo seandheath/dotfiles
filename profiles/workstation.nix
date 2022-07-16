@@ -22,6 +22,7 @@
     discord
     graphviz
     gocode
+    inetutils
     unstable.gopls
     unstable.blightmud
     python310
