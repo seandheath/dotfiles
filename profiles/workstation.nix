@@ -19,7 +19,10 @@
   # Set up virtualization
   environment.systemPackages = with pkgs; [
     qtox
+    vagrant
+    discord
     graphviz
+    gocode
     inetutils
     unstable.gopls
     unstable.blightmud
@@ -27,7 +30,7 @@
     unstable.nextcloud-client
     unstable.airshipper
     ripgrep
-    google-chrome
+    unstable.google-chrome
     gimp
     brasero
     unstable.signal-desktop
