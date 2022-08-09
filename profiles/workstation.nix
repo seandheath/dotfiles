@@ -18,6 +18,7 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    qtox
     graphviz
     inetutils
     unstable.gopls

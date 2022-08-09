@@ -118,10 +118,10 @@
   ];
   networking.nat.externalInterface = "enp3s0f1";
   networking.nat.forwardPorts = [
-    { # Veloren
-      destination = "10.0.0.2:14004";
+    { # SSH to Hydrogen
+      destination = "10.0.0.2:22";
       proto = "tcp";
-      sourcePort = 14004;
+      sourcePort = 2345;
     }
   ];
   networking.nameservers = [ "10.0.0.1" ];
