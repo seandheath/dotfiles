@@ -48,26 +48,6 @@ services.xserver.displayManager.gdm.autoSuspend=false;
         }
     });
   '';
-  services.xserver.desktopManager.gnome = {
-    extraGSettingsOverridePackages = with pkgs; [ gnome3.gnome_settings_daemon ];
-    extraGSettingsOverrides = ''
-      [org.gnome.desktop.screensaver]
-      lock-delay=0
-      lock-enabled=false
-
-      [org.gnome.desktop.session]
-      idle-delay=0
-
-      [org.gnome.settings-daemon.plugins.power]
-      power-button-action='nothing'
-      idle-dim=false
-      sleep-inactive-battery-type='nothing'
-      sleep-inactive-ac-timeout=0
-      sleep-inactive-ac-type='nothing'
-      sleep-inactive-battery-timeout=0
-    '';
-  };
-
   # Enable sound
   hardware.pulseaudio.enable = false;
   services.pipewire = {
