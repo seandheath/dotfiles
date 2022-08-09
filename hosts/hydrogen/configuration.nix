@@ -48,7 +48,7 @@ services.xserver.displayManager.gdm.autoSuspend=false;
         }
     });
   '';
-  services.xserver.desktopManager.gnome3 = {
+  services.xserver.desktopManager.gnome = {
     extraGSettingsOverridePackages = with pkgs; [ gnome3.gnome_settings_daemon ];
     extraGSettingsOverrides = ''
       [org.gnome.desktop.screensaver]
