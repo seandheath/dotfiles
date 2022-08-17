@@ -161,7 +161,7 @@
         }
       }
 
-      facebook.com reddit.com {
+      reddit.com {
         template IN A {
           answer "{{ .Name }} 0 IN A 127.0.0.1"
         }
