@@ -5,7 +5,7 @@ let
 in {
   imports = [
     "${builtins.fetchTarball "https://github.com/Mic92/sops-nix/archive/master.tar.gz"}/modules/sops"
-    /home/user/dotfiles/modules/sops.nix
+    ../modules/sops.nix
   ];
   hardware.enableRedistributableFirmware = true;
 

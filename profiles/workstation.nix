@@ -4,7 +4,6 @@
     ../modules/mullvad.nix
     ../modules/dod_certs.nix
     ../modules/clamav.nix
-    ../modules/syncthing.nix
   ];
 
   # Fix bluetooth for controller
@@ -25,10 +24,7 @@
     gocode
     inetutils
     unstable.gopls
-    unstable.blightmud
     python310
-    unstable.nextcloud-client
-    unstable.airshipper
     ripgrep
     unstable.google-chrome
     gimp
@@ -37,8 +33,6 @@
     filezilla
     flameshot
     xournalpp
-    krita
-    inkscape
     texlive.combined.scheme-full
     pandoc
     tmux
@@ -50,12 +44,11 @@
     git
     mullvad-vpn
     teams
-    unstable.vscode-fhs
+    unstable.vscode
     firefox
     rustup
     pkg-config
     glxinfo
-    unstable.crawl
     unstable.bitwarden
     devel.vmware-horizon-client
     unstable.glibc
