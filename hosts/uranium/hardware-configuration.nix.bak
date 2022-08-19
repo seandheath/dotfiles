@@ -13,27 +13,36 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-
-  boot.initrd.luks.devices."crypt-swap".device = "/dev/disk/by-uuid/47309e6f-5e4b-46f8-b1f7-1dd1d350dd03";
-  boot.initrd.luks.devices."crypt-root".device = "/dev/disk/by-uuid/137e1e21-2f79-4a86-be31-ca2760593788";
-
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/6eaef370-91c9-4e8e-a7cb-c6e7022acbbf"; }
-    ];
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/83216da6-c4ce-40c3-9dd2-389282300ec2";
+    { device = "/dev/disk/by-uuid/b09010b9-526c-4d6d-b166-b82f1f462036";
       fsType = "btrfs";
       options = [
         "noatime"
         "nodiratime"
-        "compress=lzo"
+        "compress=zstd"
+        "ssd"
         "discard"
       ];
     };
+
+  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/62dbd4db-4628-4de1-aefc-679adfb34f84";
+
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/544E-B89A";
+    { device = "/dev/disk/by-uuid/4EC1-6483";
       fsType = "vfat";
     };
 
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/d3f3a267-9bb8-48aa-be2e-99801192c426"; }
+    ];
+
+  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+  # (the default) this is the recommended approach. When using systemd-networkd it's
+  # still possible to use this option, but it's recommended to use it in conjunction
+  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+  networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
+
   powerManagement.cpuFreqGovernor = lib.mkDefault "performance";
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

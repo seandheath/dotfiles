@@ -14,27 +14,24 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/b09010b9-526c-4d6d-b166-b82f1f462036";
+    { device = "/dev/disk/by-uuid/b3363256-f019-4367-a14c-2eba948179b9";
       fsType = "btrfs";
       options = [
         "noatime"
         "nodiratime"
-        "compress=zstd"
-        "ssd"
+        "compress=lzo"
         "discard"
       ];
     };
 
-  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/62dbd4db-4628-4de1-aefc-679adfb34f84";
+  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/94f94931-2a09-4f80-837f-051fd659c9c7";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/4EC1-6483";
+    { device = "/dev/disk/by-uuid/3E53-56AA";
       fsType = "vfat";
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/d3f3a267-9bb8-48aa-be2e-99801192c426"; }
-    ];
+  swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -43,6 +40,6 @@
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
-  powerManagement.cpuFreqGovernor = lib.mkDefault "performance";
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

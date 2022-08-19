@@ -11,18 +11,6 @@ in {
     ../../users/user.nix
   ];
 
-  # Enable unfree packages
-  nixpkgs.config = {
-    allowUnfree = true;
-    packageOverrides = pkgs: {
-      nixgl = import nixglTarball {};
-    };
-  };
-
-  environment.systemPackages = with pkgs; [
-    nixgl.nixGLIntel
-  ];
-
   boot.kernel.sysctl = {
     "dev.i915.perf_stream_paranoid" = 0;
   };
