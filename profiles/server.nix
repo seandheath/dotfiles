@@ -53,9 +53,6 @@
     neovim 
     btrfs-progs
     firefox
-    vulkan-tools
-    vulkan-loader
-    vulkan-validation-layers
     ffmpeg-full
     tmux
     go_1_18

@@ -17,6 +17,9 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    mitmproxy
+    openjdk
+    wireshark
     qtox
     vagrant
     discord
