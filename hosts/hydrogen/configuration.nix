@@ -5,6 +5,7 @@
     ../../profiles/server.nix
     ../../modules/nextcloud.nix
     ../../modules/usenet.nix
+    ../../modules/kodi.nix
     ../../users/user-hydrogen.nix
   ];
 
