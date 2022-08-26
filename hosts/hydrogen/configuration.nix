@@ -26,26 +26,12 @@
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 22 80 443 6789 7878 8096 8989 ];
 
-  # Add kodi to hydrogen
   environment.systemPackages = with pkgs; [
     unstable.airshipper
     vlc
     git
   ];
 
-# Disable suspend
-#services.xserver.displayManager.gdm.autoSuspend=false;
-  #security.polkit.extraConfig = ''
-    #polkit.addRule(function(action, subject) {
-        #if (action.id == "org.freedesktop.login1.suspend" ||
-            #action.id == "org.freedesktop.login1.suspend-multiple-sessions" ||
-            #action.id == "org.freedesktop.login1.hibernate" ||
-            #action.id == "org.freedesktop.login1.hibernate-multiple-sessions")
-        #{
-            #return polkit.Result.NO;
-        #}
-    #});
-  #'';
   # Enable sound
   hardware.pulseaudio.enable = false;
   services.pipewire = {

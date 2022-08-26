@@ -1,10 +1,7 @@
 { inputs, config, pkgs, ... }: {
 
-  imports = [
-    ../modules/mullvad.nix
-    ../modules/dod_certs.nix
-    ../modules/clamav.nix
-  ];
+  imports =
+    [ ../modules/mullvad.nix ../modules/dod_certs.nix ../modules/clamav.nix ];
 
   # Fix bluetooth for controller
   boot.extraModprobeConfig = ''
@@ -17,6 +14,9 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    lldb_9 # for emacs debugging
+    nodejs
+    gotools
     mitmproxy
     openjdk
     wireshark
@@ -81,6 +81,7 @@
 
   # Fonts
   fonts.fonts = with pkgs; [
+    emacs-all-the-icons-fonts
     b612
     inconsolata
     iosevka

@@ -4,6 +4,7 @@
     ./core.nix
     ./go.nix
     ./gnome.nix
+    ./doomemacs.nix
   ];
 
   home.sessionPath = [
