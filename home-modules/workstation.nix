@@ -1,15 +1,8 @@
 { config, pkgs, ... }: {
 
-  imports = [
-    ./core.nix
-    ./go.nix
-    ./gnome.nix
-    ./doomemacs.nix
-  ];
+  imports = [ ./core.nix ./go.nix ./gnome.nix ];
 
-  home.sessionPath = [
-    "/home/user/go/bin"
-  ];
+  home.sessionPath = [ "/home/user/go/bin" ];
 
   dconf.settings = {
     "org/gnome/mutter" = { workspaces-only-on-primary = "true"; };

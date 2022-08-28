@@ -14,7 +14,10 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    jellyfin-media-player
+    emacs
     lldb_9 # for emacs debugging
+    delve
     nodejs
     gotools
     mitmproxy
