@@ -14,6 +14,7 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    unstable.tor-browser-bundle-bin
     jellyfin-media-player
     emacs
     lldb_9 # for emacs debugging
