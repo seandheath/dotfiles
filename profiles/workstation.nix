@@ -39,7 +39,6 @@
     filezilla
     flameshot
     xournalpp
-    texlive.combined.scheme-full
     pandoc
     tmux
     libreoffice
@@ -68,6 +67,7 @@
   programs.dconf.enable = true;
   virtualisation = {
     libvirtd.enable = true;
+    virtualbox.host.enable = true;
     spiceUSBRedirection.enable = true;
   };
 
