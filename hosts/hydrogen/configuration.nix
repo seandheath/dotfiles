@@ -6,6 +6,7 @@
     ../../modules/nextcloud.nix
     ../../modules/usenet.nix
     ../../modules/kodi.nix
+    ../../modules/nvidia.nix
     ../../users/user-hydrogen.nix
   ];
 
