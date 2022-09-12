@@ -7,6 +7,7 @@
     ../../modules/usenet.nix
     ../../modules/kodi.nix
     ../../modules/nvidia.nix
+    ../../modules/gnome.nix
     ../../users/user-hydrogen.nix
   ];
 
