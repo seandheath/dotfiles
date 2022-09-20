@@ -33,12 +33,6 @@
         command = "/run/current-system/sw/bin/gnome-terminal";
         name = "open-terminal";
       };
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" =
-      {
-        binding = "<Primary><Shift><Alt>s";
-        command = "flameshot gui";
-        name = "screenshot";
-      };
     "org/gnome/desktop/background" = {
       picture-uri = "none";
       primary-color = "0x000000";
