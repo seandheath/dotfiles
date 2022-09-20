@@ -20,61 +20,6 @@ in {
 
   # Enables keyboard shortcuts
   programs.dconf.enable = true;
-  services.xserver.desktopManager.gnome = {
-    extraGSettingsOverridePackages = with pkgs; [ gnome3.gnome-settings-daemon ];
-    extraGSettingsOverrides = ''
-      [org.gnome.desktop.background]
-      color-shading-type='solid'
-      picture-uri='none'
-      primary-color='0x000000'
-
-      [org.gnome.desktop.interface]
-      color-scheme='prefer-dark'
-      enable-hot-corners=false
-      gtk-theme='Adwaita-dark'
-      show-battery-percentage=true
-      
-      [org.gnome.desktop.peripherals.touchpad]
-      tap-to-click=true
-      two-finger-scrolling-enabled=true
-
-      [org.gnome.desktop.sound]
-      allow-volume-above-100-percent=true
-
-      [org.gnome.desktop.wm.keybindings]
-      move-to-workspace-left=['<Primary><Shift><Alt>Left']
-      move-to-workspace-right=['<Primary><Shift><Alt>Right']
-      switch-applications=@as []
-      switch-applications-backwards=@as []
-      switch-windows=['<Alt>Tab']
-      switch-windows-backward=['<Shift><Alt>Tab']
-
-      [org.gnome.mutter]
-      attach-modal-dialogs=false
-      dynamic-workspaces=tue
-      edge-tiling=true
-      focus-change-on-pointer-rest=true
-      workspaces-only-on-primary='true'
-
-      [org.gnome.nautilus.preferences]
-      default-folder-viewer='list-view'
-      search-filter-time-type='last_modified'
-      search-view='list-view'
-
-      [org.gnome.settings-daemon.plugins.power]
-      power-button-action='suspend'
-
-      [org.gnome.settings-daemon.plugins.media-keys]
-      custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
-      home=['<Super>e']
-
-      [org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom0]
-      binding='<Alt>Return'
-      command='/run/current-system/sw/bin/gnome-terminal'
-      name='open-terminal'
-    '';
-  };
-
 
   # Enable applet indicators
   services.udev.packages = with pkgs; [ gnome3.gnome-settings-daemon ];
