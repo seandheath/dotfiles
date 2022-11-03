@@ -1,6 +1,11 @@
 { config, pkgs, ... }: {
 
-  imports = [ ./core.nix ./go.nix ./gnome.nix ];
+  imports = [
+    ./core.nix
+    ./go.nix
+    ./gnome.nix
+  ];
+
 
   home.sessionPath = [ "/home/user/go/bin" ];
 
@@ -38,5 +43,10 @@
       primary-color = "0x000000";
       color-shading-type = "solid";
     };
+  };
+
+  services.nextcloud-client = {
+    enable = true;
+    startInBackground = true;
   };
 }
