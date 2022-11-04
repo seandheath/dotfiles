@@ -14,6 +14,9 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    nmap
+    unstable.vlc
+    nextcloud-client
     unstable.tor-browser-bundle-bin
     jellyfin-media-player
     emacs
