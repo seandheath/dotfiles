@@ -31,7 +31,11 @@
     unstable.airshipper
     vlc
     git
+    jellyfin-media-player
   ];
+
+  # Enable syncthing
+  services.syncthing.enable = true;
 
   # Enable sound
   hardware.pulseaudio.enable = false;
