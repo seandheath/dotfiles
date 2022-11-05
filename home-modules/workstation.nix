@@ -51,9 +51,4 @@
       color-shading-type = "solid";
     };
   };
-
-  services.nextcloud-client = {
-    enable = true;
-    startInBackground = true;
-  };
 }
