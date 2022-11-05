@@ -14,6 +14,7 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    unzip
     nmap
     unstable.vlc
     nextcloud-client
@@ -102,6 +103,15 @@
       sansSerif = [ "Aileron" "DejaVu Sans" ];
     };
   };
+
+  # Syncthing
+  services.syncthing = {
+    enable = true;
+    user = "user";
+    group = "user";
+    dataDir = "/home/user/syncthing";
+  };
+
 
   # Disable lid switch for laptops
   services.logind.lidSwitch = "ignore";

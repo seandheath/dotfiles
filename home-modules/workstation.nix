@@ -6,6 +6,10 @@
 
   services.nextcloud-client.enable = true;
   services.nextcloud-client.startInBackground = true;
+  services.syncthing = {
+    enable = true;
+    tray.enable = true;
+  };
 
   dconf.settings = {
     "org/gnome/mutter" = { workspaces-only-on-primary = "true"; };
