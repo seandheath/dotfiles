@@ -45,6 +45,7 @@
     flameshot
     xournalpp
     pandoc
+    tectonic
     tmux
     libreoffice
     gcc

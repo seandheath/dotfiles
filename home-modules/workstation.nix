@@ -1,6 +1,11 @@
 { config, pkgs, ... }: {
 
-  imports = [ ./core.nix ./go.nix ./gnome.nix ];
+  imports = [
+    ./core.nix
+    ./go.nix
+    ./gnome.nix
+  ];
+
 
   home.sessionPath = [ "/home/user/go/bin" ];
 
