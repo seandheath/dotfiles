@@ -37,6 +37,7 @@ in {
       ripgrep
       git
       neovim 
+      helix
       sops
       srm
       p7zip

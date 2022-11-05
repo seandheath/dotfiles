@@ -9,6 +9,13 @@
 
   home.sessionPath = [ "/home/user/go/bin" ];
 
+  services.nextcloud-client.enable = true;
+  services.nextcloud-client.startInBackground = true;
+  services.syncthing = {
+    enable = true;
+    tray.enable = true;
+  };
+
   dconf.settings = {
     "org/gnome/mutter" = { workspaces-only-on-primary = "true"; };
     "org/gnome/terminal/legacy" = { theme-variant = "dark"; };
