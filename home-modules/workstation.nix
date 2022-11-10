@@ -9,8 +9,10 @@
 
   home.sessionPath = [ "/home/user/go/bin" ];
 
-  services.nextcloud-client.enable = true;
-  services.nextcloud-client.startInBackground = true;
+  services.nextcloud-client = {
+    enable = true;
+    startInBackground = true;
+  };
   services.syncthing = {
     enable = true;
     tray.enable = true;

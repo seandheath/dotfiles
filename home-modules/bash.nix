@@ -13,6 +13,7 @@
     enable = true;
     initExtra = ''
 # ALIASES
+eval "$(thefuck --alias)"
 alias nr="sudo nixos-rebuild switch --flake /etc/nixos/"
 alias ns="nix search nixpkgs"
 alias dmesg="dmesg --color=always"

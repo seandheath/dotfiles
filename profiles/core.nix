@@ -34,6 +34,7 @@ in {
   environment = {
     variables.editor = "nvim";
     systemPackages = with pkgs; [
+      thefuck
       ripgrep
       git
       neovim 

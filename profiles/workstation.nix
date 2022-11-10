@@ -14,6 +14,8 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    logseq
+    cataclysm-dda-git
     unzip
     nmap
     unstable.vlc
