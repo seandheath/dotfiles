@@ -28,6 +28,7 @@
   networking.firewall.allowedTCPPorts = [ 22 80 443 6789 7878 8096 8989 ];
 
   environment.systemPackages = with pkgs; [
+    alsa-lib
     pkg-config
     gcc
     cargo
