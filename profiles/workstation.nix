@@ -14,6 +14,8 @@
 
   # Set up virtualization
   environment.systemPackages = with pkgs; [
+    briar-desktop
+    airshipper
     logseq
     cataclysm-dda-git
     unzip
