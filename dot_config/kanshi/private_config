@@ -1,0 +1,8 @@
+profile {
+  output "BOE 0x0BC9 Unknown" mode 2560x1600@165.000Hz position 0,0
+}
+profile {
+  output "Hewlett Packard HP Z27x CNK6200PD8" mode 2560x1440@59.951Hz position 0,0 transform 90
+  output "Dell Inc. DELL S3222DGM 6VKFT63" mode 2560x1440@119.998Hz position 1440,0
+  output "BOE 0x0BC9 Unknown" mode 2560x1600@165.000Hz position 1440,1440 scale 1.5
+}

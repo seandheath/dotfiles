@@ -1,0 +1,8 @@
+[Unit]
+Description=Dynamic output configuration
+Documentation=man:kanshi(1)
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/kanshi
+Restart=always
