@@ -30,6 +30,7 @@ AddPackage obsidian
 AddPackage chezmoi
 AddPackage openssh
 AddPackage age
+AddPackage code
 
 # AUR
 AddPackage --foreign aconfmgr-git # A configuration manager for Arch Linux
