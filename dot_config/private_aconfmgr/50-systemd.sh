@@ -7,3 +7,4 @@ CreateLink /etc/systemd/system/sysinit.target.wants/systemd-boot-update.service 
 CopyFile /etc/NetworkManager/system-connections/skynet5.nmconnection 600
 CreateLink /etc/systemd/system/bluetooth.target.wants/bluetooth.service /usr/lib/systemd/system/bluetooth.service
 CreateLink /etc/systemd/system/dbus-org.bluez.service /usr/lib/systemd/system/bluetooth.service
+CreateLink /etc/systemd/user/default.target.wants/xdg-user-dirs-update.service /usr/lib/systemd/user/xdg-user-dirs-update.service
