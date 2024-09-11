@@ -31,6 +31,7 @@ AddPackage chezmoi
 AddPackage openssh
 AddPackage age
 AddPackage code
+AddPackage blueberrry
 
 # AUR
 AddPackage --foreign aconfmgr-git # A configuration manager for Arch Linux
