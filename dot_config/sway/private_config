@@ -199,5 +199,6 @@ bar {
   swaybar_command waybar
 }
 
+xwayland enable
 include /etc/sway/config.d/*
 exec systemctl --user restart kanshi
