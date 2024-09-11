@@ -33,6 +33,14 @@ AddPackage age
 AddPackage code
 AddPackage blueman
 AddPackage pipewire-audio
+AddPackage lib32-libva-mesa-driver # Open-source VA-API drivers - 32-bit
+AddPackage lib32-mesa # Open-source OpenGL drivers - 32-bit
+AddPackage lib32-mesa-vdpau # Open-source VDPAU drivers - 32-bit
+AddPackage lib32-vulkan-radeon # Open-source Vulkan driver for AMD GPUs - 32-bit
+AddPackage libva-mesa-driver # Open-source VA-API drivers
+AddPackage mesa-vdpau # Open-source VDPAU drivers
+AddPackage steam # Valve's digital software delivery system
+AddPackage vulkan-radeon # Open-source Vulkan driver for AMD GPUs
 
 # AUR
 AddPackage --foreign aconfmgr-git # A configuration manager for Arch Linux
@@ -40,4 +48,3 @@ AddPackage --foreign mkinitcpio-firmware # Optional firmware for the default lin
 AddPackage --foreign yay # Yet another yogurt. Pacman wrapper and AUR helper written in go.
 AddPackage --foreign yay-debug # Detached debugging symbols for yay
 AddPackage --foreign google-chrome
-
