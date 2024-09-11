@@ -40,7 +40,7 @@ source $HOME/.config/bash/key-bindings.bash 2>/dev/null
 source $HOME/.config/bash/fzf-functions.bash 2>/dev/null
 
 # Add Package
-alias ap="nvim ~/.config/aconfmgr/20-pacman.sh"
+alias ap="chezmoi edit ~/.config/aconfmgr/20-packages.sh"
 
 # Chezmoi shortcut
 alias cm="chezmoi"
