@@ -1,0 +1,165 @@
+# If not running interactively, don't do anything
+[[ "$-" != *i* ]] && return
+
+# Shell Options
+
+# Make bash append rather than overwrite the history on disk
+shopt -s histappend
+
+# When changing directory small typos can be ignored by bash
+# for example, cd /vr/lgo/apaache would find /var/log/apache
+shopt -s cdspell
+
+# Completion options
+#
+# These completion tuning parameters change the default behavior of bash_completion:
+# enable bash completion in interactive shells
+#if ! shopt -oq posix; then
+    #if [ -f /usr/share/bash-completion/bash_completion ]; then
+        #. /usr/share/bash-completion/bash_completion
+        #elif [ -f /etc/bash_completion ]; then
+        #. /etc/bash_completion
+    #fi
+#fi
+bind 'set show-all-if-ambiguous on'
+bind 'TAB:menu-complete'
+bind 'set menu-complete-display-prefix on'
+
+# History Options
+#
+# Don't put duplicate lines in the history.
+export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
+export HISTSIZE=""
+
+# Set up fzf
+export FZF_DEFAULT_COMMAND='find * -type f'
+export FZF_CTRL_R_OPTS='--sort'
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+source $HOME/.config/bash/completion.bash 2>/dev/null
+source $HOME/.config/bash/key-bindings.bash 2>/dev/null
+source $HOME/.config/bash/fzf-functions.bash 2>/dev/null
+
+# Add Package
+alias ap="nvim ~/.config/aconfmgr/20-pacman.sh"
+
+# Chezmoi shortcut
+alias cm="chezmoi"
+
+# Default to human readable figures
+alias df='df -h'
+alias du='du -h'
+
+# xz compression
+alias xxz='XZ_OPT=-T0 tar xvJf'
+alias cxz='XZ_OPT=-T0 tar cvJf'
+
+# nordvpn
+alias nordu='sudo systemctl start nordvpnd;nordvpn c us'
+alias nordd='sudo systemctl stop nordvpnd'
+
+# wireguard
+alias wgu='sudo wg-quick up wg0'
+alias wgd='sudo wg-quick down wg0'
+
+# virt-manager
+alias vmu='sudo systemctl start libvirtd;sudo virsh net-start default;virt-manager'
+alias vmd='sudo systemctl stop libvirtd;sudo virsh net-destroy default'
+
+# Misc
+alias less='less -r'                          # raw control characters
+alias whence='type -a'                        # where, of a sort
+alias grep='grep --color'                     # show differences in colour
+alias egrep='egrep --color=auto'              # show differences in colour
+alias fgrep='fgrep --color=auto'              # show differences in colour
+alias resetcac="sudo systemctl restart pcscd"
+
+# Config management
+alias runcfg='~/.linuxconfig/setup.sh'
+function pushcfg() {
+    dir=$(pwd)
+    cd ~/.linuxconfig
+    git push origin master
+    cd $dir
+}
+function addpkg() {
+    echo "$1" >> ~/.config/linuxconfig/packages
+}
+
+# Some shortcuts for different directory listings
+alias ls='ls -hF --color=auto'
+alias ll='ls -l --color=auto'                              # long list
+alias la='ls -Al --color=auto'                              # all but . and ..
+alias l='ls -CF --color=auto'                              #
+
+# aws cli
+function daws(){
+    aws "$@" --profile dftc
+}
+
+
+
+# Prompt
+BLACK='\e[0;30m'        # Black
+RED='\e[0;31m'          # Red
+GREEN='\e[0;32m'        # Green
+YELLOW='\e[0;33m'       # Yellow
+BLUE='\e[0;34m'         # Blue
+PURPLE='\e[0;35m'       # Purple
+CYAN='\e[0;36m'         # Cyan
+WHITE='\e[0;37m'        # White
+
+# get current status of git repo
+function nonzero_return() {
+	RETVAL=$?
+	[ $RETVAL -ne 0 ] && echo " $RED[$RETVAL] "
+}
+
+# get current branch in git repo
+function parse_git_branch() {
+	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+	if [ ! "${BRANCH}" == "" ]
+	then
+		STAT=`parse_git_dirty`
+		echo -e " [${BRANCH}${STAT}]"
+	else
+		echo ""
+	fi
+}
+
+# get current status of git repo
+function parse_git_dirty {
+	status=`git status 2>&1 | tee`
+	dirty=`echo -n "${status}" 2> /dev/null | grep "modified:" &> /dev/null; echo "$?"`
+	untracked=`echo -n "${status}" 2> /dev/null | grep "Untracked files" &> /dev/null; echo "$?"`
+	ahead=`echo -n "${status}" 2> /dev/null | grep "Your branch is ahead of" &> /dev/null; echo "$?"`
+	newfile=`echo -n "${status}" 2> /dev/null | grep "new file:" &> /dev/null; echo "$?"`
+	renamed=`echo -n "${status}" 2> /dev/null | grep "renamed:" &> /dev/null; echo "$?"`
+	deleted=`echo -n "${status}" 2> /dev/null | grep "deleted:" &> /dev/null; echo "$?"`
+	bits=''
+	if [ "${renamed}" == "0" ]; then
+		bits=">${bits}"
+	fi
+	if [ "${ahead}" == "0" ]; then
+		bits="*${bits}"
+	fi
+	if [ "${newfile}" == "0" ]; then
+		bits="+${bits}"
+	fi
+	if [ "${untracked}" == "0" ]; then
+		bits="?${bits}"
+	fi
+	if [ "${deleted}" == "0" ]; then
+		bits="x${bits}"
+	fi
+	if [ "${dirty}" == "0" ]; then
+		bits="!${bits}"
+	fi
+	if [ ! "${bits}" == "" ]; then
+		echo -e " \001$RED\002${bits}\001$PURPLE\002"
+	else
+		echo ""
+	fi
+}
+
+export PS1="\n\[$GREEN\]\u\[$RED\]|\[$WHITE\]\h\[$RED\]|\[$GREEN\]\w\[$PURPLE\]\$(parse_git_branch)\[$RED\]\$(nonzero_return)\[$WHITE\]> "
+#export PS1="\[$GREEN\]\t\[$RED\]-\[$CYAN\]\u@\h\[$YELLOW\]\[$YELLOW\]\w\[\033[m\]\[$PURPLE\]\$(__git_ps1)\[$WHITE\]\$ "
