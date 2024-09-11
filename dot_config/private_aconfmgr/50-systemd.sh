@@ -4,3 +4,6 @@ CreateLink /etc/systemd/system/multi-user.target.wants/NetworkManager.service /u
 CreateLink /etc/systemd/system/multi-user.target.wants/remote-fs.target /usr/lib/systemd/system/remote-fs.target
 CreateLink /etc/systemd/system/network-online.target.wants/NetworkManager-wait-online.service /usr/lib/systemd/system/NetworkManager-wait-online.service
 CreateLink /etc/systemd/system/sysinit.target.wants/systemd-boot-update.service /usr/lib/systemd/system/systemd-boot-update.service
+CopyFile /etc/NetworkManager/system-connections/skynet5.nmconnection 600
+CreateLink /etc/systemd/system/bluetooth.target.wants/bluetooth.service /usr/lib/systemd/system/bluetooth.service
+CreateLink /etc/systemd/system/dbus-org.bluez.service /usr/lib/systemd/system/bluetooth.service
