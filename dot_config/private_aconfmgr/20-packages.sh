@@ -1,11 +1,11 @@
 AddPackage gnome-shell
 AddPackage gnome-shell-extension-gtile
 AddPackage gnome-shell-extension-appindicator
+AddPackage gnome-firmware
+AddPackage power-profiles-daemon
 AddPackage nerd-fonts
 AddPackage reflector
 AddPackage fzf
-AddPackage gnome-firmware
-AddPackage power-profiles-daemon
 AddPackage cups
 AddPackage amd-ucode # Microcode update image for AMD CPUs
 AddPackage base # Minimal package set to define a basic Arch Linux installation
