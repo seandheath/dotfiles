@@ -1,5 +1,12 @@
 AddPackageGroup nerd-fonts
 AddPackage ccid
+AddPackage rustup
+AddPackage swtpm
+AddPackage bash-completion
+AddPackage libreoffice-fresh
+AddPackage texlive-xetex
+AddPackage xournalpp
+AddPackage wireshark-qt
 AddPackage opensc
 AddPackage virt-manager
 AddPackage btop
@@ -70,3 +77,7 @@ AddPackage --foreign gnome-shell-extension-gtile
 AddPackage --foreign vmware-horizon-client
 AddPackage --foreign vmware-horizon-smartcard
 AddPackage --foreign vmware-horizon-usb
+AddPackage --foreign pandoc-bin
+AddPackage --foreign signal-desktop
+AddPackage --foreign mullvad-vpn-bin
+AddPackage --foreign code-marketplace
