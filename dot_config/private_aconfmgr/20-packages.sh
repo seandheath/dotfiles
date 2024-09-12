@@ -1,4 +1,3 @@
-
 AddPackage gdm
 AddPackage nodejs
 AddPackage npm
@@ -8,6 +7,7 @@ AddPackage gnome-firmware
 AddPackage gnome-keyring
 AddPackage gnome-backgrounds
 AddPackage gnome-control-center
+AddPackage gnome-shell-extension-appindicator
 AddPackage networkmanager
 AddPackage libnotify
 AddPackage libcanberra
@@ -63,4 +63,3 @@ AddPackage --foreign yay # Yet another yogurt. Pacman wrapper and AUR helper wri
 AddPackage --foreign yay-debug # Detached debugging symbols for yay
 AddPackage --foreign google-chrome
 AddPackage --foreign gnome-shell-extension-gtile
-AddPackage --foreign gnome-shell-extension-appindicator
