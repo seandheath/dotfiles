@@ -1,5 +1,6 @@
 AddPackageGroup nerd-fonts
 AddPackage wget
+AddPackage patchelf
 AddPackage ccid
 AddPackage rustup
 AddPackage swtpm
