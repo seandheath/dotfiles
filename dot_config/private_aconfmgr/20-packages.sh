@@ -1,3 +1,5 @@
+AddPackage xorg-xwayland
+AddPackage thunar
 AddPackage amd-ucode # Microcode update image for AMD CPUs
 AddPackage base # Minimal package set to define a basic Arch Linux installation
 AddPackage base-devel # Basic tools to build Arch Linux packages
