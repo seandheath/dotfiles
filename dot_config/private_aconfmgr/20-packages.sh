@@ -2,6 +2,7 @@ AddPackage gnome-shell
 AddPackage gnome-shell-extension-gtile
 AddPackage gnome-shell-extension-appindicator
 AddPackage gnome-firmware
+AddPackage gnome-keyring
 AddPackage power-profiles-daemon
 AddPackage nerd-fonts
 AddPackage reflector
