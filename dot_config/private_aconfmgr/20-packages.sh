@@ -1,6 +1,8 @@
 
 AddPackage gdm
 AddPackage nodejs
+AddPackage npm
+AddPackage typescript
 AddPackage gnome-shell
 AddPackage gnome-shell-extension-gtile
 AddPackage gnome-firmware
