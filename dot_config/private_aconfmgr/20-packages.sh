@@ -1,3 +1,4 @@
+AddPackage virt-manager
 AddPackage btop
 AddPackage gdm
 AddPackage nodejs
