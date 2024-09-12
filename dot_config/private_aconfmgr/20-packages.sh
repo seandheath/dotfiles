@@ -3,6 +3,10 @@ AddPackage gnome-shell-extension-gtile
 AddPackage gnome-shell-extension-appindicator
 AddPackage gnome-firmware
 AddPackage gnome-keyring
+AddPackage gnome-backgrounds
+AddPackage gnome-control-center
+AddPackage networkmanager
+AddPackage xdg-user-dirs-gtk
 AddPackage power-profiles-daemon
 AddPackage nerd-fonts
 AddPackage reflector
