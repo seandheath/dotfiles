@@ -1,3 +1,4 @@
+AddPackageGroup nerd-fonts
 AddPackage ccid
 AddPackage opensc
 AddPackage virt-manager
