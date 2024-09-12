@@ -1,4 +1,5 @@
 AddPackage gnome-shell
+AddPackage gnome-shell-extension-gtile
 AddPackage gnome-firmware
 AddPackage gnome-keyring
 AddPackage gnome-backgrounds
