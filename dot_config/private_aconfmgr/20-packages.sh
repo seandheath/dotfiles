@@ -1,3 +1,4 @@
+AddPackage gnome-shell
 AddPackage gnome-shell-extension-gtile
 AddPackage gnome-shell-extension-appindicator
 AddPackage nerd-fonts
