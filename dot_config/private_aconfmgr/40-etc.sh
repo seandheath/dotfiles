@@ -12,4 +12,6 @@ CopyFile /etc/shells
 CopyFile /etc/vconsole.conf
 CreateLink /etc/localtime /usr/share/zoneinfo/America/New_York
 CreateLink /etc/os-release ../usr/lib/os-release
-CreateLink /usr/lib/vmware/view/pkcs11/libopenscpkcs11.so /usr/lib64/pkcs11/opensc-pkcs11.so 
+CreateFile /etc/mullvad-vpn/account-history.json 600 > /dev/null
+CopyFile /etc/mullvad-vpn/device.json 600
+CopyFile /etc/mullvad-vpn/settings.json

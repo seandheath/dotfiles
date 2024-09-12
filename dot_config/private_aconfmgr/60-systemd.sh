@@ -10,4 +10,5 @@ CreateLink /etc/systemd/user/default.target.wants/xdg-user-dirs-update.service /
 CreateLink /etc/systemd/system/display-manager.service /usr/lib/systemd/system/gdm.service
 CreateLink /etc/systemd/user/pipewire-session-manager.service /usr/lib/systemd/user/wireplumber.service
 CreateLink /etc/systemd/user/pipewire.service.wants/wireplumber.service /usr/lib/systemd/user/wireplumber.service
-
+CreateLink /etc/systemd/system/mullvad-daemon.service.wants/mullvad-early-boot-blocking.service /usr/lib/systemd/system/mullvad-early-boot-blocking.service
+CreateLink /etc/systemd/system/multi-user.target.wants/mullvad-daemon.service /usr/lib/systemd/system/mullvad-daemon.service

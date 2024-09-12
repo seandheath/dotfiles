@@ -68,6 +68,7 @@ AddPackage libva-mesa-driver # Open-source VA-API drivers
 AddPackage mesa-vdpau # Open-source VDPAU drivers
 AddPackage vulkan-radeon # Open-source Vulkan driver for AMD GPUs
 AddPackage steam # Valve's digital software delivery system
+AddPackage signal-desktop
 
 # AUR
 AddPackage --foreign aconfmgr-git # A configuration manager for Arch Linux
@@ -80,6 +81,5 @@ AddPackage --foreign vmware-horizon-client
 AddPackage --foreign vmware-horizon-smartcard
 AddPackage --foreign vmware-horizon-usb
 AddPackage --foreign pandoc-bin
-AddPackage --foreign signal-desktop
 AddPackage --foreign mullvad-vpn-bin
 AddPackage --foreign code-marketplace
