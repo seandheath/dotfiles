@@ -1,5 +1,6 @@
 AddPackageGroup nerd-fonts
 AddPackage wget
+AddPackage nautilus
 AddPackage patchelf
 AddPackage ccid
 AddPackage rustup
