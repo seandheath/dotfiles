@@ -10,6 +10,5 @@ CopyFile /etc/mkinitcpio.conf
 CopyFile /etc/mkinitcpio.d/linux.preset
 CreateLink /etc/os-release ../usr/lib/os-release
 CopyFile /etc/pacman.conf
-CopyFile /etc/resolv.conf
 CopyFile /etc/shells
 CopyFile /etc/vconsole.conf
