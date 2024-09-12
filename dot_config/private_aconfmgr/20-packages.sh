@@ -1,3 +1,5 @@
+AddPackage ccid
+AddPackage opensc
 AddPackage virt-manager
 AddPackage btop
 AddPackage gdm
@@ -64,3 +66,6 @@ AddPackage --foreign yay # Yet another yogurt. Pacman wrapper and AUR helper wri
 AddPackage --foreign yay-debug # Detached debugging symbols for yay
 AddPackage --foreign google-chrome
 AddPackage --foreign gnome-shell-extension-gtile
+AddPackage --foreign vmware-horizon-client
+AddPackage --foreign vmware-horizon-smartcard
+AddPackage --foreign vmware-horizon-usb
