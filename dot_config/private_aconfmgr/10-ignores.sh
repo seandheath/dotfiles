@@ -28,6 +28,12 @@ IgnorePath '/var/*'
 
 # /etc
 IgnorePath '/etc/.updated'
+IgnorePath '/etc/adjtime'
+IgnorePath '/etc/fstab'
+IgnorePath '/etc/hostname'
+IgnorePath '/etc/machine-id'
+IgnorePath '/etc/crypttab'
+IgnorePath '/etc/mullvad-vpn/*'
 IgnorePath '/etc/hosts'
 IgnorePath '/etc/mkinitcpio.d/*'
 IgnorePath '/etc/shells'
