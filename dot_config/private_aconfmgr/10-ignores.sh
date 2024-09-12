@@ -5,19 +5,28 @@ IgnorePath '*.lock'
 IgnorePath '*.crt'
 IgnorePath '*.pem'
 IgnorePath '*.socket'
+IgnorePath '/tmp/*'
+
+# /boot
 IgnorePath '/boot/*'
+
 # /usr
 IgnorePath '/usr/lib/locale/*'
 IgnorePath '/usr/lib/modules/*'
 IgnorePath '/usr/lib/udev/*'
+IgnorePath '/usr/lib/code/*'
+IgnorePath '/usr/share/code-marketplace/*'
+IgnorePath '/usr/share/texfm-dist/*'
 IgnorePath '/usr/bin/*'
 IgnorePath '/usr/share/mime/*'
 IgnorePath '/usr/share/info/*'
 IgnorePath '/usr/share/glib-2.0/*'
 IgnorePath '/usr/share/vim/*'
 
+# /var
 IgnorePath '/var/*'
-IgnorePath '/tmp/*'
+
+# /etc
 IgnorePath '/etc/.updated'
 IgnorePath '/etc/hosts'
 IgnorePath '/etc/colord/*'
@@ -34,3 +43,4 @@ IgnorePath '/etc/pacman.d/*'
 IgnorePath '/etc/fonts/*'
 IgnorePath '/etc/ca-certificates/*'
 IgnorePath '/etc/ssl/*'
+IgnorePath '/etc/texmf/*'
