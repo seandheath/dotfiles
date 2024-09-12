@@ -1,5 +1,11 @@
-AddPackage xorg-xwayland
-AddPackage thunar
+AddPackage gnome-shell-extension-gtile
+AddPackage gnome-shell-extension-appindicator
+AddPackage nerd-fonts
+AddPackage reflector
+AddPackage fzf
+AddPackage gnome-firmware
+AddPackage power-profiles-daemon
+AddPackage cups
 AddPackage amd-ucode # Microcode update image for AMD CPUs
 AddPackage base # Minimal package set to define a basic Arch Linux installation
 AddPackage base-devel # Basic tools to build Arch Linux packages
@@ -15,14 +21,7 @@ AddPackage tree # A directory listing program displaying a depth indented list o
 AddPackage vim # Vi Improved, a highly configurable, improved version of the vi text editor
 AddPackage which # A utility to show the full path of commands
 AddPackage go
-AddPackage sway
-AddPackage swayidle
-AddPackage swaylock
-AddPackage swaybg
-AddPackage waybar
-AddPackage wofi
 AddPackage firefox
-AddPackage kanshi
 AddPackage kitty
 AddPackage otf-font-awesome
 AddPackage keepassxc
@@ -33,16 +32,14 @@ AddPackage chezmoi
 AddPackage openssh
 AddPackage age
 AddPackage code
-AddPackage blueman
-AddPackage pipewire-audio
 AddPackage lib32-libva-mesa-driver # Open-source VA-API drivers - 32-bit
 AddPackage lib32-mesa # Open-source OpenGL drivers - 32-bit
 AddPackage lib32-mesa-vdpau # Open-source VDPAU drivers - 32-bit
 AddPackage lib32-vulkan-radeon # Open-source Vulkan driver for AMD GPUs - 32-bit
 AddPackage libva-mesa-driver # Open-source VA-API drivers
 AddPackage mesa-vdpau # Open-source VDPAU drivers
-AddPackage steam # Valve's digital software delivery system
 AddPackage vulkan-radeon # Open-source Vulkan driver for AMD GPUs
+AddPackage steam # Valve's digital software delivery system
 
 # AUR
 AddPackage --foreign aconfmgr-git # A configuration manager for Arch Linux
