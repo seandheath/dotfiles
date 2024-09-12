@@ -9,7 +9,6 @@ AddPackage libnotify
 AddPackage libcanberra
 AddPackage libpulse
 AddPackage pulse-native-provider
-AddPackage xdg-desktop-portal-impl
 AddPackage xdg-desktop-portal-gnome
 AddPackage xdg-desktop-portal
 AddPackage xdg-user-dirs-gtk
