@@ -7,6 +7,9 @@ AddPackage gnome-backgrounds
 AddPackage gnome-control-center
 AddPackage networkmanager
 AddPackage libnotify
+AddPackage libcanberra
+AddPackage libpulse
+AddPackage xdg-desktop-portal-impl
 AddPackage xdg-user-dirs-gtk
 AddPackage power-profiles-daemon
 AddPackage nerd-fonts
