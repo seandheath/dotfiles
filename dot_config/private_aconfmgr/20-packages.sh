@@ -1,6 +1,5 @@
 AddPackage gnome-shell
 AddPackage gnome-shell-extension-gtile
-AddPackage gnome-shell-extension-appindicator
 AddPackage gnome-firmware
 AddPackage gnome-keyring
 AddPackage gnome-backgrounds
@@ -60,3 +59,5 @@ AddPackage --foreign mkinitcpio-firmware # Optional firmware for the default lin
 AddPackage --foreign yay # Yet another yogurt. Pacman wrapper and AUR helper written in go.
 AddPackage --foreign yay-debug # Detached debugging symbols for yay
 AddPackage --foreign google-chrome
+AddPackage --foreign gnome-shell-extension-gtile
+AddPackage --foreign gnome-shell-extension-appindicator
