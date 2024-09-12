@@ -1,3 +1,6 @@
+
+AddPackage gdm
+AddPackage nodejs
 AddPackage gnome-shell
 AddPackage gnome-shell-extension-gtile
 AddPackage gnome-firmware
