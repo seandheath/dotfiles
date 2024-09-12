@@ -1,5 +1,5 @@
 profile {
-  output "BOE 0x0BC9 Unknown" mode 2560x1600@165.000Hz position 0,0
+  output "BOE 0x0BC9 Unknown" mode 2560x1600@165.000Hz position 0,0 scale 1.5
 }
 profile {
   output "Hewlett Packard HP Z27x CNK6200PD8" mode 2560x1440@59.951Hz position 0,0 transform 90
