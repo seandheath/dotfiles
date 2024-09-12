@@ -1,3 +1,4 @@
+AddPackage btop
 AddPackage gdm
 AddPackage nodejs
 AddPackage npm
