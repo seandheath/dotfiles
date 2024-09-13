@@ -1,4 +1,5 @@
 AddPackageGroup nerd-fonts
+AddPackage profile-sync-daemon
 AddPackage wget
 AddPackage nautilus
 AddPackage patchelf
