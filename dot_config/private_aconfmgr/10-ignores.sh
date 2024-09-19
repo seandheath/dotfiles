@@ -1,12 +1,13 @@
-
-
-
-
-# /boot
-# /etc
-IgnorePath '/boot/*'
 IgnorePath '*.cache'
 IgnorePath '*.crt'
+IgnorePath '*.iso'
+IgnorePath '*.lock'
+IgnorePath '*.pem'
+IgnorePath '*.qcow2'
+IgnorePath '*.socket'
+IgnorePath '/boot/*'
+IgnorePath '/etc/.updated'
+IgnorePath '/etc/NetworkManager/*'
 IgnorePath '/etc/adjtime'
 IgnorePath '/etc/ca-certificates/*'
 IgnorePath '/etc/colord*'
@@ -22,7 +23,6 @@ IgnorePath '/etc/libvirt/*'
 IgnorePath '/etc/machine-id'
 IgnorePath '/etc/mkinitcpio.d/*'
 IgnorePath '/etc/mullvad-vpn/*'
-IgnorePath '/etc/NetworkManager/*'
 IgnorePath '/etc/pacman.d/*'
 IgnorePath '/etc/passwd*'
 IgnorePath '/etc/printcap'
@@ -34,12 +34,6 @@ IgnorePath '/etc/subgid*'
 IgnorePath '/etc/subuid*'
 IgnorePath '/etc/sudoers*'
 IgnorePath '/etc/texmf/*'
-IgnorePath '/etc/.updated'
-IgnorePath '*.iso'
-IgnorePath '*.lock'
-IgnorePath '*.pem'
-IgnorePath '*.qcow2'
-IgnorePath '*.socket'
 IgnorePath '/tmp/*'
 IgnorePath '/usr/bin/*'
 IgnorePath '/usr/lib/code/*'
@@ -53,5 +47,3 @@ IgnorePath '/usr/share/mime/*'
 IgnorePath '/usr/share/texmf-dist/*'
 IgnorePath '/usr/share/vim/*'
 IgnorePath '/var/*'
-# /usr
-# /var
