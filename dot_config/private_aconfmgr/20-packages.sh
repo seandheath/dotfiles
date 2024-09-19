@@ -9,14 +9,17 @@ AddPackage ccid
 AddPackage chezmoi
 AddPackage code
 AddPackage cups
+AddPackage dnsmasq # Lightweight, easy to configure DNS forwarder and DHCP server
 AddPackage firefox
 AddPackage --foreign aconfmgr-git # A configuration manager for Arch Linux
+AddPackage --foreign auto-cpufreq # Automatic CPU speed & power optimizer
 AddPackage --foreign code-marketplace
 AddPackage --foreign gnome-shell-extension-gtile
 AddPackage --foreign google-chrome
 AddPackage --foreign mkinitcpio-firmware # Optional firmware for the default linux kernel
 AddPackage --foreign mullvad-vpn-bin
 AddPackage --foreign pandoc-bin
+AddPackage --foreign proton-ge-custom-bin # A fancy custom distribution of Valves Proton with various patches
 AddPackage --foreign vmware-horizon-client
 AddPackage --foreign vmware-horizon-smartcard
 AddPackage --foreign vmware-horizon-usb
@@ -31,8 +34,11 @@ AddPackage gnome-firmware
 AddPackage gnome-keyring
 AddPackage gnome-shell
 AddPackage gnome-shell-extension-appindicator
+AddPackage gnome-tweaks # Graphical interface for advanced GNOME 3 settings (Tweak Tool)
 AddPackage go
 AddPackageGroup nerd-fonts
+AddPackage guestfs-tools # Tools for accessing and modifying guest disk images
+AddPackage htop # Interactive process viewer
 AddPackage keepassxc
 AddPackage kitty
 AddPackage less # A terminal based program for viewing text files
@@ -59,9 +65,12 @@ AddPackage opensc
 AddPackage openssh
 AddPackage otf-font-awesome
 AddPackage patchelf
+AddPackage pkgfile # alpm .files metadata explorer
 AddPackage power-profiles-daemon
 AddPackage profile-sync-daemon
 AddPackage pulse-native-provider
+AddPackage qemu-base # A basic QEMU setup for headless environments
+AddPackage qemu-full # A full QEMU setup
 AddPackage qt5-wayland
 AddPackage reflector
 AddPackage ripgrep
@@ -75,6 +84,7 @@ AddPackage tree # A directory listing program displaying a depth indented list o
 AddPackage typescript
 AddPackage vim # Vi Improved, a highly configurable, improved version of the vi text editor
 AddPackage virt-manager
+AddPackage vlc # Multi-platform MPEG, VCD/DVD, and DivX player
 AddPackage vulkan-radeon # Open-source Vulkan driver for AMD GPUs
 AddPackage wget
 AddPackage which # A utility to show the full path of commands
