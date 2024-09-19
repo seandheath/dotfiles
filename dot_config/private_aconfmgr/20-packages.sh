@@ -1,16 +1,3 @@
-AddPackage age
-AddPackage amd-ucode # Microcode update image for AMD CPUs
-AddPackage base-devel # Basic tools to build Arch Linux packages
-AddPackage base # Minimal package set to define a basic Arch Linux installation
-AddPackage bash-completion
-AddPackage btop
-AddPackage btrfs-progs # Btrfs filesystem utilities
-AddPackage ccid
-AddPackage chezmoi
-AddPackage code
-AddPackage cups
-AddPackage dnsmasq # Lightweight, easy to configure DNS forwarder and DHCP server
-AddPackage firefox
 AddPackage --foreign aconfmgr-git # A configuration manager for Arch Linux
 AddPackage --foreign auto-cpufreq # Automatic CPU speed & power optimizer
 AddPackage --foreign code-marketplace
@@ -23,8 +10,21 @@ AddPackage --foreign proton-ge-custom-bin # A fancy custom distribution of Valve
 AddPackage --foreign vmware-horizon-client
 AddPackage --foreign vmware-horizon-smartcard
 AddPackage --foreign vmware-horizon-usb
-AddPackage --foreign yay-debug # Detached debugging symbols for yay
 AddPackage --foreign yay # Yet another yogurt. Pacman wrapper and AUR helper written in go.
+AddPackage --foreign yay-debug # Detached debugging symbols for yay
+AddPackage age
+AddPackage amd-ucode # Microcode update image for AMD CPUs
+AddPackage base # Minimal package set to define a basic Arch Linux installation
+AddPackage base-devel # Basic tools to build Arch Linux packages
+AddPackage bash-completion
+AddPackage btop
+AddPackage btrfs-progs # Btrfs filesystem utilities
+AddPackage ccid
+AddPackage chezmoi
+AddPackage code
+AddPackage cups
+AddPackage dnsmasq # Lightweight, easy to configure DNS forwarder and DHCP server
+AddPackage firefox
 AddPackage fzf
 AddPackage gdm
 AddPackage git # the fast distributed version control system
@@ -36,7 +36,6 @@ AddPackage gnome-shell
 AddPackage gnome-shell-extension-appindicator
 AddPackage gnome-tweaks # Graphical interface for advanced GNOME 3 settings (Tweak Tool)
 AddPackage go
-AddPackageGroup nerd-fonts
 AddPackage guestfs-tools # Tools for accessing and modifying guest disk images
 AddPackage htop # Interactive process viewer
 AddPackage keepassxc
@@ -51,8 +50,8 @@ AddPackage libnotify
 AddPackage libpulse
 AddPackage libreoffice-fresh
 AddPackage libva-mesa-driver # Open-source VA-API drivers
-AddPackage linux-firmware # Firmware files for Linux
 AddPackage linux # The Linux kernel and modules
+AddPackage linux-firmware # Firmware files for Linux
 AddPackage mesa-vdpau # Open-source VDPAU drivers
 AddPackage nautilus
 AddPackage neovim # Fork of Vim aiming to improve user experience, plugins, and GUIs
@@ -93,3 +92,4 @@ AddPackage xdg-desktop-portal
 AddPackage xdg-desktop-portal-gnome
 AddPackage xdg-user-dirs-gtk
 AddPackage xournalpp
+AddPackageGroup nerd-fonts
