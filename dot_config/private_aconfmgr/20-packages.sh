@@ -13,6 +13,7 @@ AddPackage --foreign vmware-horizon-usb
 AddPackage --foreign yay # Yet another yogurt. Pacman wrapper and AUR helper written in go.
 AddPackage --foreign yay-debug # Detached debugging symbols for yay
 AddPackage age
+AddPackage nmap
 AddPackage amd-ucode # Microcode update image for AMD CPUs
 AddPackage base # Minimal package set to define a basic Arch Linux installation
 AddPackage base-devel # Basic tools to build Arch Linux packages
@@ -78,6 +79,7 @@ AddPackage signal-desktop
 AddPackage steam # Valve's digital software delivery system
 AddPackage sudo # Give certain users the ability to run some commands as root
 AddPackage swtpm
+AddPackage syncthing
 AddPackage texlive-xetex
 AddPackage tree # A directory listing program displaying a depth indented list of files
 AddPackage typescript
