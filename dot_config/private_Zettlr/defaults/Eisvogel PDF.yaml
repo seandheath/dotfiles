@@ -1,0 +1,17 @@
+reader: markdown
+writer: pdf
+metadata:
+  link-citations: true
+  graphics: yes
+filters:
+- pandoc-crossref
+- citeproc
+listings: true
+pdf-engine: xelatex # Change this if you want to use a different engine, e.g. pdflatex
+toc: true # Include a table of contents?
+toc-depth: 3 # 2 means to only include headings level 1 and 2 in the ToC
+number-sections: true
+section-divs: true
+tab-stop: 4
+fail-if-warnings: false
+template: resources/eisvogel.latex
