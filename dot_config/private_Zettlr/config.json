@@ -1,0 +1,378 @@
+{
+  "version": "3.2.2",
+  "openPaths": [
+    "/home/sheath/projects/AMRASS",
+    "/home/sheath/Documents/Zettlr Tutorial"
+  ],
+  "openDirectory": "/home/sheath/projects/AMRASS/resources",
+  "dialogPaths": {
+    "askFileDialog": "/home/sheath/projects/AMRASS",
+    "askDirDialog": "/home/sheath/projects/AMRASS/images",
+    "askLangFileDialog": ""
+  },
+  "window": {
+    "nativeAppearance": false,
+    "vibrancy": false,
+    "sidebarVisible": false,
+    "currentSidebarTab": "toc",
+    "recentGlobalSearches": []
+  },
+  "ui": {
+    "fileManagerSplitSize": [
+      20,
+      80
+    ],
+    "editorSidebarSplitSize": [
+      80,
+      20
+    ]
+  },
+  "attachmentExtensions": [
+    ".pdf",
+    ".odt",
+    ".odp",
+    ".ods",
+    ".doc",
+    ".docx",
+    ".xls",
+    ".xlsx",
+    ".ppt",
+    ".pptx",
+    ".do",
+    ".r",
+    ".py",
+    ".sav",
+    ".zsav",
+    ".csv",
+    ".tsv",
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".gif",
+    ".tiff"
+  ],
+  "darkMode": true,
+  "alwaysReloadFiles": true,
+  "autoDarkMode": "system",
+  "autoDarkModeStart": "21:00",
+  "autoDarkModeEnd": "06:00",
+  "fileMeta": true,
+  "fileMetaTime": "modtime",
+  "sorting": "natural",
+  "sortFoldersFirst": true,
+  "muteLines": true,
+  "fileManagerMode": "combined",
+  "fileNameDisplay": "title+heading",
+  "newFileNamePattern": "%id.md",
+  "newFileDontPrompt": false,
+  "export": {
+    "dir": "cwd",
+    "stripTags": true,
+    "stripLinks": "full",
+    "cslLibrary": "/home/sheath/Zotero/My Library.json",
+    "cslStyle": "/home/sheath/projects/AMRASS/resources/ieee.csl",
+    "useBundledPandoc": false,
+    "exportQmdWithQuarto": false,
+    "singleFileLastExporter": "Eisvogel PDF.yaml",
+    "customCommands": []
+  },
+  "zkn": {
+    "idRE": "(\\d{14})",
+    "idGen": "%Y%M%D%h%m%s",
+    "linkFilenameOnly": false,
+    "linkWithFilename": "never",
+    "linkFormat": "link|title",
+    "autoSearch": true,
+    "customDirectory": ""
+  },
+  "editor": {
+    "autoSave": "delayed",
+    "autocompleteAcceptSpace": false,
+    "autocompleteSuggestEmojis": true,
+    "autoCloseBrackets": true,
+    "showLinkPreviews": true,
+    "showWhitespace": false,
+    "defaultSaveImagePath": "/home/sheath/projects/AMRASS/images",
+    "citeStyle": "regular",
+    "enableTableHelper": true,
+    "indentUnit": 4,
+    "indentWithTabs": false,
+    "fontSize": 18,
+    "countChars": false,
+    "inputMode": "default",
+    "boldFormatting": "**",
+    "italicFormatting": "_",
+    "readabilityAlgorithm": "dale-chall",
+    "showStatusbar": true,
+    "lint": {
+      "markdown": true,
+      "languageTool": {
+        "active": false,
+        "level": "picky",
+        "motherTongue": "",
+        "variants": {
+          "en": "en-US",
+          "de": "de-DE",
+          "pt": "pt-PT",
+          "ca": "ca-ES"
+        },
+        "provider": "official",
+        "customServer": "",
+        "username": "",
+        "apiKey": ""
+      }
+    },
+    "autoCorrect": {
+      "active": true,
+      "magicQuotes": {
+        "primary": "\"…\"",
+        "secondary": "'…'"
+      },
+      "replacements": [
+        {
+          "key": "-->",
+          "value": "→"
+        },
+        {
+          "key": "–>",
+          "value": "→"
+        },
+        {
+          "key": "<--",
+          "value": "←"
+        },
+        {
+          "key": "<->",
+          "value": "↔"
+        },
+        {
+          "key": "<-->",
+          "value": "↔"
+        },
+        {
+          "key": "==>",
+          "value": "⇒"
+        },
+        {
+          "key": "<==",
+          "value": "⇐"
+        },
+        {
+          "key": "<=>",
+          "value": "⇔"
+        },
+        {
+          "key": "<==>",
+          "value": "⇔"
+        },
+        {
+          "key": "!=",
+          "value": "≠"
+        },
+        {
+          "key": "<>",
+          "value": "≠"
+        },
+        {
+          "key": "+-",
+          "value": "±"
+        },
+        {
+          "key": ":time:",
+          "value": "×"
+        },
+        {
+          "key": ":division:",
+          "value": "÷"
+        },
+        {
+          "key": "<=",
+          "value": "≤"
+        },
+        {
+          "key": ">=",
+          "value": "≥"
+        },
+        {
+          "key": "1/2",
+          "value": "½"
+        },
+        {
+          "key": "1/3",
+          "value": "⅓"
+        },
+        {
+          "key": "2/3",
+          "value": "⅔"
+        },
+        {
+          "key": "1/4",
+          "value": "¼"
+        },
+        {
+          "key": "3/4",
+          "value": "¾"
+        },
+        {
+          "key": "1/8",
+          "value": "⅛"
+        },
+        {
+          "key": "3/8",
+          "value": "⅜"
+        },
+        {
+          "key": "5/8",
+          "value": "⅝"
+        },
+        {
+          "key": "7/8",
+          "value": "⅞"
+        },
+        {
+          "key": "mm2",
+          "value": "mm²"
+        },
+        {
+          "key": "cm2",
+          "value": "cm²"
+        },
+        {
+          "key": "m2",
+          "value": "m²"
+        },
+        {
+          "key": "km2",
+          "value": "km²"
+        },
+        {
+          "key": "mm3",
+          "value": "mm³"
+        },
+        {
+          "key": "cm3",
+          "value": "cm³"
+        },
+        {
+          "key": "ccm",
+          "value": "cm³"
+        },
+        {
+          "key": "m3",
+          "value": "m³"
+        },
+        {
+          "key": "km3",
+          "value": "km³"
+        },
+        {
+          "key": ":sup2:",
+          "value": "²"
+        },
+        {
+          "key": ":sup3:",
+          "value": "³"
+        },
+        {
+          "key": ":deg:",
+          "value": "°"
+        },
+        {
+          "key": ":eur",
+          "value": "€"
+        },
+        {
+          "key": ":gbp",
+          "value": "£"
+        },
+        {
+          "key": ":yen",
+          "value": "¥"
+        },
+        {
+          "key": ":cent",
+          "value": "¢"
+        },
+        {
+          "key": ":inr:",
+          "value": "₹"
+        },
+        {
+          "key": "(c)",
+          "value": "©"
+        },
+        {
+          "key": "(tm)",
+          "value": "™"
+        },
+        {
+          "key": "(r)",
+          "value": "®"
+        },
+        {
+          "key": "...",
+          "value": "…"
+        },
+        {
+          "key": "--",
+          "value": "–"
+        },
+        {
+          "key": "---",
+          "value": "—"
+        }
+      ],
+      "matchWholeWords": false
+    }
+  },
+  "display": {
+    "theme": "bielefeld",
+    "hideToolbarInDistractionFree": false,
+    "markdownFileExtensions": false,
+    "imageWidth": 75,
+    "imageHeight": 50,
+    "renderCitations": true,
+    "renderIframes": true,
+    "renderImages": true,
+    "renderLinks": true,
+    "renderMath": true,
+    "renderTasks": true,
+    "renderHTags": false,
+    "renderEmphasis": false
+  },
+  "selectedDicts": [],
+  "appLang": "en-US",
+  "debug": true,
+  "watchdog": {
+    "activatePolling": false,
+    "stabilityThreshold": 1000
+  },
+  "system": {
+    "deleteOnFail": false,
+    "leaveAppRunning": false,
+    "avoidNewTabs": false,
+    "iframeWhitelist": [
+      "www.youtube.com",
+      "player.vimeo.com"
+    ],
+    "checkForUpdates": true,
+    "zoomBehavior": "gui"
+  },
+  "checkForBeta": false,
+  "displayToolbarButtons": {
+    "showOpenPreferencesButton": true,
+    "showNewFileButton": true,
+    "showPreviousFileButton": true,
+    "showNextFileButton": true,
+    "showToggleReadabilityButton": true,
+    "showMarkdownCommentButton": true,
+    "showMarkdownLinkButton": true,
+    "showMarkdownImageButton": true,
+    "showMarkdownMakeTaskListButton": true,
+    "showInsertTableButton": true,
+    "showInsertFootnoteButton": true,
+    "showDocumentInfoText": true,
+    "showPomodoroButton": true
+  },
+  "uuid": "18d63073-c3c0-4f1d-9235-4b05693a1aa8"
+}
